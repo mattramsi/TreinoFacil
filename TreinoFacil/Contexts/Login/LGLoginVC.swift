@@ -65,7 +65,6 @@ class LGLoginVC: UIViewController, FormBase {
             if result["status"].stringValue == "200" {
                 
                 self.performSegue(withIdentifier: "toHome", sender: nil)
-                Utils.openAlert(message: "Login com sucesso!")
                 Utils.setStorage(name: "clienteId", value: result["result"].stringValue)
                 print("TOKEN: ", Utils.getStorage(name: "clienteId"))
                 

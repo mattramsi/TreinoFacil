@@ -15,20 +15,20 @@ struct Service {
     static let sharedInstance = Service()
     private var manager: SessionManager
     
+    
     private init() {
         self.manager = Alamofire.SessionManager.default
     }
 
-    
     func get(url: String, nomeMetodo: String, header: HTTPHeaders) -> Promise<JSON> {
         
-        print(url)
+        print(url, header)
         return Promise() { resolver in
-            
             self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+                
                 switch(response.result) {
                     case .success(let responseObject):
-                        
+                        print(response.response)
                         resolver.fulfill(JSON(responseObject))
                     
                     case .failure(let error): print(error); resolver.reject(error)
@@ -39,13 +39,13 @@ struct Service {
     
     func post(url: String, nomeMetodo: String, body: [String : Any]?, header: HTTPHeaders) -> Promise<JSON> {
         
-        print(url)
+        print(url, header)
         return Promise() { resolver in
             
             self.manager.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
                 switch(response.result) {
                     case .success(let responseObject):
-                        
+                        print(response.response)
                         resolver.fulfill(JSON(responseObject))
                     
                     case .failure(let error): print(error); resolver.reject(error)
@@ -54,4 +54,12 @@ struct Service {
         }
     }
     
+  
+ 
+
 }
+
+
+
+    
+

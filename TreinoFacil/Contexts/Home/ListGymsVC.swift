@@ -54,8 +54,20 @@ class ListGymsVC: UITableViewController {
         
         return cell
     }
-
-
+    
+    var academiaSelecionada: Academia!
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.academiaSelecionada = academias[indexPath.row]
+        self.performSegue(withIdentifier: "toPagar", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPagar" {
+            let controller = segue.destination as! PagarVC
+            controller.setAcademia(academia: self.academiaSelecionada)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -42,11 +42,12 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
         
         if !x  {
             x = true
-            changeViewBtn.setImage(#imageLiteral(resourceName: "listas"), for: .normal)
+            
+            changeViewBtn.setImage(#imageLiteral(resourceName: "maps-and-flags"), for: .normal)
             changeViewBtn.setTitle("Mapa", for: .normal)
         } else{
             x = false
-            changeViewBtn.setImage(#imageLiteral(resourceName: "maps-and-flags"), for: .normal)
+            changeViewBtn.setImage(#imageLiteral(resourceName: "listas"), for: .normal)
             changeViewBtn.setTitle("Listas", for: .normal)
         }
         
@@ -79,6 +80,7 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
         
         changeViewBtn.layer.borderWidth = 1
         searchBar.delegate = self
+        add(asChildViewController: mapVC)
         self.getCurrentLocation()
     }
     
@@ -131,7 +133,7 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filtered = self.academias.filter({ $0.nome?.lowercased().range(of: searchText.lowercased(), options: .caseInsensitive) != nil })
+        filtered = self.academias.filter({ $0.nome?.lowercased().range(of: searchText.lowercased(), options: .caseInsensitive) != nil || $0.local?.nome!.lowercased().range(of: searchText.lowercased(), options: .caseInsensitive) != nil || ($0.tags?.contains(searchText.lowercased()))!})
         
         print(filtered.count)
         self.mapVC.setListGym(array: filtered)

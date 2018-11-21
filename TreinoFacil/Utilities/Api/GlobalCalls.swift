@@ -73,10 +73,11 @@ class GlobalCalls{
     }
     
     static func getAgendamento() -> Promise<JSON> {
+    
         let url = base_eventos + "/agendamento/"
         var header = defaultHeader()
         header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
-        return Service.sharedInstance.get(url: url, nomeMetodo: "getAgendamento", header: header)
+        return Service.sharedInstance.get(url: url, nomeMetodo: "agendamento", header: header)
     }
     
     static func getEvento(lat: String, lng: String) -> Promise<JSON> {
@@ -85,10 +86,12 @@ class GlobalCalls{
         return Service.sharedInstance.get(url: url, nomeMetodo: "getEvento", header: header)
     }
     
+ 
+    
     static func getLocal() -> Promise<JSON> {
         let url = base_eventos + "/local/"
         let header = defaultHeader()
         return Service.sharedInstance.get(url: url, nomeMetodo: "getLocal", header: header)
     }
-
+    
 }
