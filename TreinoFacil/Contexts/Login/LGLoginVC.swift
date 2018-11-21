@@ -26,7 +26,7 @@ class LGLoginVC: UIViewController, FormBase {
 
         // Do any additional setup after loading the view.
         
-        
+        self.hideKeyboard()
        self.loadLayout()
        self.validaFormFields()
     }

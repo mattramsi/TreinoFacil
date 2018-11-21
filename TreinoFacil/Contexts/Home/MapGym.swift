@@ -14,11 +14,22 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var academias = [Academia]()
     @IBOutlet weak var mapView: MKMapView!
     
+    lazy var locationManager: CLLocationManager = {
+        var _locationManager = CLLocationManager()
+        _locationManager.delegate = self
+        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        _locationManager.distanceFilter = 10.0  // Movement threshold for new events
+        //  _locationManager.allowsBackgroundLocationUpdates = true // allow in background
+        
+        return _locationManager
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.mapView.delegate = self
         // Do any additional setup after loading the view.
+        locationManager.requestAlwaysAuthorization()
         self.setMark()
     }
     
@@ -44,11 +55,14 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.last {
+            print("lat: ", location.coordinate.latitude)
+            print("lon: ", location.coordinate.longitude)
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            self.mapView.setRegion(region, animated: true)
+            self.mapView.setCenter(center, animated: false)
         }
     }
+
 
 }
