@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lmz-Ba-F3p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lmz-Ba-F3p">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,7 +74,7 @@
         <scene sceneID="C1A-Bz-gLO">
             <objects>
                 <tableViewController storyboardIdentifier="ListVC" id="Ej3-AP-24v" customClass="ListGymsVC" customModule="TreinoFacil" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVX-TJ-CO9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVX-TJ-CO9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,7 +149,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LKJ-6J-Bnu">
-                                        <rect key="frame" x="35" y="25" width="240" height="128"/>
+                                        <rect key="frame" x="35" y="25" width="241" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="9rB-Oh-ZNr"/>
                                         </constraints>
@@ -162,13 +161,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhA-tn-0Rz">
-                                        <rect key="frame" x="0.0" y="229" width="311" height="18"/>
+                                        <rect key="frame" x="0.0" y="229.5" width="311" height="18"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 50,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="py6-8c-qIm">
-                                        <rect key="frame" x="0.0" y="297" width="311" height="41"/>
+                                        <rect key="frame" x="0.0" y="297.5" width="311" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <color key="textColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -439,13 +438,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barbell" width="24" height="24"/>
-        <image name="checked" width="128" height="128"/>
+        <image name="barbell" width="19.200000762939453" height="19.200000762939453"/>
+        <image name="checked" width="368.6400146484375" height="368.6400146484375"/>
         <image name="dumbbell" width="24" height="24"/>
         <image name="earth-globe" width="24" height="24"/>
-        <image name="listas" width="16" height="16"/>
-        <image name="settings" width="24" height="24"/>
-        <image name="settings-on" width="24" height="24"/>
-        <image name="worldwide" width="24" height="24"/>
+        <image name="listas" width="12.800000190734863" height="12.800000190734863"/>
+        <image name="settings" width="19.200000762939453" height="19.200000762939453"/>
+        <image name="settings-on" width="46.702701568603516" height="46.702701568603516"/>
+        <image name="worldwide" width="19.200000762939453" height="19.200000762939453"/>
     </resources>
 </document>

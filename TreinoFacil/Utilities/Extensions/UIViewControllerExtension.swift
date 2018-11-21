@@ -17,10 +17,16 @@ extension UIViewController
             target: self,
             action: #selector(UIViewController.dismissKeyboard))
         
+        
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() { view.endEditing(true) }
+    @objc func dismissKeyboard() {
+        if let vcParent = parent as UIViewController? {
+            vcParent.view.endEditing(true)
+        }
+        view.endEditing(true)
+    }
     
     var className: String { return NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!; }
     

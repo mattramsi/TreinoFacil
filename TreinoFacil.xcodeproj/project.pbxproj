@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17650F0496F74BE59AD8E0C2 /* Pods_TreinoFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F7762947DA6172D00D8A1 /* Pods_TreinoFacil.framework */; };
 		17942BBF21A49FC800E6CA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942BBE21A49FC800E6CA06 /* AppDelegate.swift */; };
 		17942BC121A49FC800E6CA06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942BC021A49FC800E6CA06 /* ViewController.swift */; };
 		17942BC421A49FC800E6CA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17942BC221A49FC800E6CA06 /* Main.storyboard */; };
@@ -68,7 +69,6 @@
 		17942D5221A4D7FA00E6CA06 /* PesquisaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */; };
 		17AB1C5421A58C1A00698D3E /* fundo-app.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17AB1C5321A58C1A00698D3E /* fundo-app.jpg */; };
 		17DE589221A5E48A0065E529 /* PagarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE589121A5E48A0065E529 /* PagarVC.swift */; };
-		953D7901D012C067362D3A82 /* Pods_TreinoFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F7762947DA6172D00D8A1 /* Pods_TreinoFacil.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953D7901D012C067362D3A82 /* Pods_TreinoFacil.framework in Frameworks */,
+				17650F0496F74BE59AD8E0C2 /* Pods_TreinoFacil.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BKK27272P7;
+				DEVELOPMENT_TEAM = F9EJXT35WE;
 				INFOPLIST_FILE = TreinoFacil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -719,7 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BKK27272P7;
+				DEVELOPMENT_TEAM = F9EJXT35WE;
 				INFOPLIST_FILE = TreinoFacil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

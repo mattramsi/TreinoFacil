@@ -27,10 +27,11 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-          self.hideKeyboard()
+        self.hideKeyboard()
         self.mapView.delegate = self
         // Do any additional setup after loading the view.
         locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
         self.setMark()
     }
     
@@ -44,7 +45,7 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
         for academia in academias {
             let annotation = MKPointAnnotation()
-            annotation.title = academia.local?.nome as? String
+            annotation.title = academia.local?.nome
             annotation.coordinate = CLLocationCoordinate2D(latitude: academia.local?.lat as! Double, longitude: academia.local?.lng as! Double)
             mapView.addAnnotation(annotation)
         }
@@ -61,8 +62,14 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             print("lat: ", location.coordinate.latitude)
             print("lon: ", location.coordinate.longitude)
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            self.mapView.setCenter(center, animated: false)
+            let camera = MKMapCamera(lookingAtCenter: center, fromEyeCoordinate: center, eyeAltitude: 10000.0)
+            self.mapView.setCamera(camera, animated: false)
+            locationManager.stopUpdatingLocation()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
     }
 
 
