@@ -1,0 +1,10 @@
+// Requisição
+
+Services.getFluxo().done { result -> Void in
+
+
+}
+.catch { error in
+    print(error)
+}
+
