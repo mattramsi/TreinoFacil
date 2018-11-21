@@ -12,5 +12,6 @@ class Colors {
 
     static let greenTrigg = Utils.hexStringToUIColor(hex: "#00ccba")
     static let lightgray = Utils.hexStringToUIColor(hex: "#DDDDDD")
+    static let pink = Utils.hexStringToUIColor(hex: "#E2295E")
     
 }

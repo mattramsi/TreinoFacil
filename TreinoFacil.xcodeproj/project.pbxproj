@@ -66,6 +66,7 @@
 		17942D4E21A4D72100E6CA06 /* ListGymsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D4D21A4D72100E6CA06 /* ListGymsVC.swift */; };
 		17942D5021A4D7A600E6CA06 /* MapGym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D4F21A4D7A600E6CA06 /* MapGym.swift */; };
 		17942D5221A4D7FA00E6CA06 /* PesquisaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */; };
+		17AB1C5421A58C1A00698D3E /* fundo-app.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17AB1C5321A58C1A00698D3E /* fundo-app.jpg */; };
 		953D7901D012C067362D3A82 /* Pods_TreinoFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F7762947DA6172D00D8A1 /* Pods_TreinoFacil.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		17942D4D21A4D72100E6CA06 /* ListGymsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGymsVC.swift; sourceTree = "<group>"; };
 		17942D4F21A4D7A600E6CA06 /* MapGym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGym.swift; sourceTree = "<group>"; };
 		17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaVC.swift; sourceTree = "<group>"; };
+		17AB1C5321A58C1A00698D3E /* fundo-app.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fundo-app.jpg"; sourceTree = "<group>"; };
 		4D2F7762947DA6172D00D8A1 /* Pods_TreinoFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreinoFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		744C53A9B84ECAFD9D4B6E71 /* Pods-TreinoFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreinoFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-TreinoFacil/Pods-TreinoFacil.release.xcconfig"; sourceTree = "<group>"; };
 		EF11A88EFE6915682F9A47AA /* Pods-TreinoFacil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreinoFacil.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TreinoFacil/Pods-TreinoFacil.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		17942C2C21A4A09B00E6CA06 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				17AB1C5321A58C1A00698D3E /* fundo-app.jpg */,
 				17942D2421A4D11800E6CA06 /* barbell.png */,
 				17942D2521A4D11800E6CA06 /* dumbbell.png */,
 				17942D2821A4D11900E6CA06 /* earth-globe.png */,
@@ -431,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AB1C5421A58C1A00698D3E /* fundo-app.jpg in Resources */,
 				17942D3121A4D11900E6CA06 /* maps-and-flags.png in Resources */,
 				17942D3021A4D11900E6CA06 /* earth-globe.png in Resources */,
 				17942D2C21A4D11900E6CA06 /* barbell.png in Resources */,

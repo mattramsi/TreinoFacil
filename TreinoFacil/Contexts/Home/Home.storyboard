@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,14 +149,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly9-aC-qCS">
-                                            <rect key="frame" x="37" y="11" width="78" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly9-aC-qCS">
+                                            <rect key="frame" x="36" y="11" width="303" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ly9-aC-qCS" firstAttribute="leading" secondItem="1v0-ai-FCL" secondAttribute="leadingMargin" constant="20" id="HH5-VB-ogG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ly9-aC-qCS" secondAttribute="trailing" constant="20" id="bLP-GQ-P8L"/>
+                                        <constraint firstItem="Ly9-aC-qCS" firstAttribute="top" secondItem="1v0-ai-FCL" secondAttribute="topMargin" id="pFZ-pO-qo3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="data" destination="Ly9-aC-qCS" id="v0c-hu-H50"/>
@@ -183,7 +188,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yb-gU-Mrt">
                                 <rect key="frame" x="0.0" y="588" width="375" height="30"/>
-                                <state key="normal" title="Sair"/>
+                                <state key="normal" title="Sair">
+                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logout:" destination="5v8-6j-Ggg" eventType="touchUpInside" id="0NB-2w-eBa"/>
                                     <segue destination="eOp-EI-b7F" kind="show" id="289-NS-eac"/>
@@ -231,6 +238,7 @@
                             <constraint firstItem="4pN-nz-SaM" firstAttribute="top" secondItem="6d7-4L-Spv" secondAttribute="top" id="vwM-Mf-zSI"/>
                             <constraint firstAttribute="trailing" secondItem="4pN-nz-SaM" secondAttribute="trailing" id="wQB-tD-fJZ"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dpt-gy-cvb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvA-Xz-25N" userLabel="First Responder" sceneMemberID="firstResponder"/>

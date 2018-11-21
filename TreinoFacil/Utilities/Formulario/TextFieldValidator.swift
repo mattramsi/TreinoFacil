@@ -20,7 +20,6 @@ class TextFieldValidator: Validatable {
     init(textField: UITextField!, validator: @escaping () -> Bool) {
         self.textField = textField
         self.validador = validator
-        self.textField.underlined()
         self.textField.addTarget(self, action: #selector(validacao), for:  UIControlEvents.allEditingEvents)
         self.textField.addTarget(self, action: #selector(displayMsg), for: UIControlEvents.allEditingEvents)
     }

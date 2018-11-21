@@ -18,6 +18,7 @@ class Form {
         self.button = button
         self.fields = fields
         self.button.isEnabled = false
+        self.button.withBorderRadius()
         self.button.layer.backgroundColor = Colors.lightgray.cgColor
         
         for i in 0...(fields.count - 1) {
@@ -42,8 +43,7 @@ class Form {
             button.layer.backgroundColor = Colors.lightgray.cgColor
         } else{
             button.isEnabled = true
-            button.alpha = 0.8
-            button.layer.backgroundColor = Colors.greenTrigg.cgColor
+            button.layer.backgroundColor = Colors.pink.cgColor
         }
         
         for i in 0...(fields.count - 1) {

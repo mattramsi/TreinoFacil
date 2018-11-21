@@ -27,11 +27,14 @@ extension UITextField {
     }
     
     func validated(){
-        self.layer.shadowColor = Colors.greenTrigg.cgColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = Colors.greenTrigg.cgColor
     }
     
     func invalid(){
-        self.layer.shadowColor = UIColor.red.cgColor
+         self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.red.cgColor
+      
     }
     
 }
