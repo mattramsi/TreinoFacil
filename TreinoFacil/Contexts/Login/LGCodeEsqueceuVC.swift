@@ -102,8 +102,5 @@ class LGCodeEsqueceuVC: UIViewController, UITextFieldDelegate {
                 
                 }.catch { error in print(error) }
         }
-        
-        
     }
-    
 }

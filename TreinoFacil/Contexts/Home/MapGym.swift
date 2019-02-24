@@ -26,13 +26,14 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-          self.hideKeyboard()
+
         self.mapView.delegate = self
         // Do any additional setup after loading the view.
         locationManager.requestAlwaysAuthorization()
         self.setMark()
     }
+   
+   
     
     func setListGym(array: [Academia]){
        self.removeMarks()

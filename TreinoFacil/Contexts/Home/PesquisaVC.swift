@@ -40,6 +40,8 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
  
     @IBAction func changeView(_ sender: Any) {
         
+        self.getCurrentLocation()
+        
         if !x  {
             x = true
             
@@ -83,6 +85,7 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
         add(asChildViewController: mapVC)
         self.getCurrentLocation()
     }
+
     
     func getCurrentLocation() {
         
@@ -121,14 +124,17 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchActive = false;
+        self.hideKeyboard()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
+        self.hideKeyboard()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
+        self.hideKeyboard()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

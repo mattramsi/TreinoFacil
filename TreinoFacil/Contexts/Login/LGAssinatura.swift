@@ -24,7 +24,7 @@ class LGAssinatura: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        
+        self.hideKeyboard()
         self.loadLayout()
         self.validaFormFields()
     }
