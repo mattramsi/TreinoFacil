@@ -29,6 +29,7 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
     private lazy var mapVC: MapGymVC = {
         let storyboard = UIStoryboard(name: "Home", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "MapVC" ) as! MapGymVC
+        viewController.locationManager = self.locManager
         return viewController
     }()
     
@@ -83,38 +84,41 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
         changeViewBtn.layer.borderWidth = 1
         searchBar.delegate = self
         add(asChildViewController: mapVC)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.locManager.startUpdatingLocation()
         self.getCurrentLocation()
     }
-
     
     func getCurrentLocation() {
-        
-        locManager.requestWhenInUseAuthorization()
-        
-        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways){
+
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        if (authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse ||
+            authorizationStatus == CLAuthorizationStatus.authorizedAlways){
+            
+            locManager.startUpdatingHeading()
+
             guard let currentLocation = locManager.location else {
                 return
             }
-            print(currentLocation.coordinate.latitude)
-            print(currentLocation.coordinate.longitude)
+            
+            print("LATITUDE: ", currentLocation.coordinate.latitude)
+            print("longitude: ", currentLocation.coordinate.longitude)
             let lat = String(currentLocation.coordinate.latitude)
             let lng = String(currentLocation.coordinate.longitude)
             
-            GlobalCalls.getEvento(lat: lat, lng: lng).done { result -> Void in
-                print(result)
+            GlobalCalls.getEvento(lat: "2", lng: "2").done { result -> Void in
                 for item in result["Items"].arrayValue {
                     let academia: Academia = Mapper<Academia>().map(JSON: item.dictionaryObject!)!
                     self.academias.append(academia)
                 }
                 
-                print(self.academias.count)
                 self.mapVC.setListGym(array: self.academias)
                 self.listVC.setListGym(array: self.academias)
             }.catch { error in print(error) }
         }
-        
-       
+
     }
     
     

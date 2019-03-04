@@ -26,7 +26,6 @@ class MeusTreinosVC: UITableViewController {
         // Do any additional setup after loading the view.
         
         GlobalCalls.getAgendamento().done { result -> Void in
-            print(result)
             for item in result["Items"].arrayValue {
                 let agendamento: Agendamento = Mapper<Agendamento>().map(JSON: item.dictionaryObject!)!
                 self.agendamentos.append(agendamento)

@@ -104,17 +104,22 @@ class Utils {
         }
     }
     
-    static func formatCurrency(value: Any) -> String {
+    static func formatCurrency(value: Any?) -> String {
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.maximumFractionDigits = 2
         formatter.locale = Locale(identifier: "pt_BR")
         formatter.currencySymbol = "R$ "
-        let result = formatter.string(from: value as! NSNumber)
-       
-        return  result!
+        
+        
+        if let nsNumberValue = value as? NSNumber {
+            let result = formatter.string(from: nsNumberValue)
+            return (result != nil ? result! : "R$ 0,00")
+        }
+        
+        return "R$ 0,00"
     }
-    
     
     static func dateTimeline(string: String)  -> Array<String>{
   

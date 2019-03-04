@@ -15,7 +15,7 @@ import Foundation
 import ObjectMapper
 
 struct Valor : Mappable {
-	var quantidade : Int?
+	var quantidade : Double?
 	var moeda : String?
 
 	init?(map: Map) {

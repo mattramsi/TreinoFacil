@@ -1,70 +1,67 @@
 //
-//  listGymsTableViewController.swift
+//  HorariosTC.swift
 //  TreinoFacil
 //
-//  Created by Matheus Ramos on 20/11/2018.
-//  Copyright © 2018 Curso IOS. All rights reserved.
+//  Created by Matheus Ramos on 03/03/19.
+//  Copyright © 2019 Curso IOS. All rights reserved.
 //
 
 import UIKit
 
-class ListGymsCell: UITableViewCell {
+
+class HorariosCell: UITableViewCell {
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var aula: UILabel!
-  
+    @IBOutlet weak var data: UILabel!
+    @IBOutlet weak var hora: UILabel!
+    
 }
 
-class ListGymsVC: UITableViewController {
+class HorariosTC: UITableViewController {
+    
+    var academia: Academia!
 
-    
-    var academias = [Academia]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
-    func setListGym(array: [Academia]){
-        self.academias = array
-        self.tableView.reloadData()
-    }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return academias.count
+        return academia.proximasDatas!.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListGym", for: indexPath) as! ListGymsCell
-
-        cell.name.text = self.academias[indexPath.row].local?.nome
-        cell.aula.text = self.academias[indexPath.row].nome
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HorariosCell", for: indexPath) as! HorariosCell
+        
+        let horario = self.academia.proximasDatas![indexPath.row]
+        let dataHora = Utils.dateTimeline(string: horario)
+        cell.data.text = dataHora[0]
+        cell.hora.text = dataHora[1]
         
         return cell
     }
     
-   
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let academiaSelecionada = academias[indexPath.row]
-   
+        let horarioSelecionado = self.academia.proximasDatas![indexPath.row]
+        
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "HorariosTC") as? HorariosTC {
-            controller.academia = academiaSelecionada
+        if let controller = storyboard.instantiateViewController(withIdentifier: "PagarVC") as? PagarVC {
+            controller.setAcademia(academia: self.academia, horario: horarioSelecionado)
             self.present(controller, animated: true, completion: nil)
         }
     }
     
+   
 
 }

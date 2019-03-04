@@ -22,13 +22,13 @@ class LGInitialVC: UIViewController {
             DispatchQueue.main.async(){
                 self.performSegue(withIdentifier: "toLogin", sender: nil)
             }
-            print("tem clienteID", Utils.getStorage(name: "clienteId"))
+            print("Não tem clienteID", Utils.getStorage(name: "clienteId"))
         } else {
             DispatchQueue.main.async(){
                 self.performSegue(withIdentifier: "toHome", sender: nil)
             }
             
-            print("Não tem clienteID", Utils.getStorage(name: "clienteId"))
+            print("tem clienteID", Utils.getStorage(name: "clienteId"))
         }
     }
     

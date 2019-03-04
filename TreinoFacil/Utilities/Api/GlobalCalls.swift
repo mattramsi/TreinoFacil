@@ -81,7 +81,7 @@ class GlobalCalls{
     }
     
     static func getEvento(lat: String, lng: String) -> Promise<JSON> {
-        let url = base_eventos + "/evento?lat=" + lat + "&lng=" + lng
+        let url = base_eventos + "/evento?lat=23.5680812&lng=-46.5522709"
         let header = defaultHeader()
         return Service.sharedInstance.get(url: url, nomeMetodo: "getEvento", header: header)
     }

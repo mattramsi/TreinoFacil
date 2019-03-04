@@ -37,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="-226" y="727"/>
         </scene>
-        <!--Treino Fácil-->
+        <!--TreinoFacil-->
         <scene sceneID="UdX-uU-01f">
             <objects>
                 <viewController id="oNO-tt-HR1" customClass="LGLoginVC" customModule="TreinoFacil" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oUc-Lr-gUJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Treino Fácil" id="uDT-Wl-rGN">
+                    <navigationItem key="navigationItem" title="TreinoFacil" id="uDT-Wl-rGN">
                         <barButtonItem key="backBarButtonItem" title=" " id="zsT-Ec-Hhq"/>
                     </navigationItem>
                     <connections>
