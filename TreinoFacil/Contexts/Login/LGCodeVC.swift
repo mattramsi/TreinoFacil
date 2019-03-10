@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class LGCodeVC: UIViewController, UITextFieldDelegate {
+class LGCodeVC: BaseViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tf_1: UITextField!
     @IBOutlet weak var tf_2: UITextField!
@@ -23,7 +23,8 @@ class LGCodeVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboard()
+        
         tf_1.tag = 0
         tf_2.tag = 1
         tf_3.tag = 2
@@ -90,18 +91,22 @@ class LGCodeVC: UIViewController, UITextFieldDelegate {
          
             self.registroCelular.setToken(value: code)
             let obj = self.registroCelular.toJSON()
-            print(obj)
             
-            GlobalCalls.celular(body: obj).done { result -> Void in
-                print(result)
-                
+            GlobalCalls.celular(networkRequestDelegate: self, body: obj, responseHandler: ResponseHandler(startHandler: {
+                 self.btn_send.loadingIndicator(true)
+            }, finishHandler: {
+                 self.btn_send.loadingIndicator(false)
+            }, successHandler: { (result) in
+
                 if result["status"].stringValue == "200" {
                     self.performSegue(withIdentifier: "toSuccess", sender: nil)
                 } else if result["id"].intValue == 103 {
                     Utils.openAlert(message: result["message"].stringValue)
                 }
                 
-                }.catch { error in print(error) }
+            }, failureHandler: { (result) in
+                
+            }))
         }
         
         

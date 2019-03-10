@@ -20,9 +20,14 @@ struct Configuracao : Mappable {
 	var diasSemana : [Int]?
 	var duracaoMinutos : String?
 
-	init?(map: Map) {
-
-	}
+	init?(map: Map) {}
+    
+    init(valor: Valor, horarios: [String], diasSemana: [Int], duracaoMinutos: String) {
+        self.valor = valor
+        self.horarios = horarios
+        self.diasSemana = diasSemana
+        self.duracaoMinutos = duracaoMinutos
+    }
 
 	mutating func mapping(map: Map) {
 

@@ -39,6 +39,31 @@ class MaskCPF: NSObject, UITextFieldDelegate {
     
 }
 
+
+class MaskCNPJ: NSObject, UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.count == 2 && string.count != 0 {
+            textField.text = textField.text! + "."
+        }
+        else if textField.text?.count == 6 && string.count != 0 {
+            textField.text = textField.text! + "."
+        }
+        else if textField.text?.count == 10 && string.count != 0 {
+            textField.text = textField.text! + "/"
+        }
+        else if textField.text?.count == 15 && string.count != 0 {
+            textField.text = textField.text! + "-"
+        }
+        if textField.text?.count == 19 && string.count != 0 {
+            return false
+        }
+        return true
+    }
+    
+}
+
 class MaskCelular: NSObject, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -74,6 +99,37 @@ class MaskDate: NSObject, UITextFieldDelegate {
         if textField.text?.count == 2 && string.count != 0 { textField.text = textField.text! + "/" }
         if textField.text?.count == 5 && string.count != 0 { textField.text = textField.text! + "/" }
         if textField.text?.count == 10 && string.count != 0 { return false }
+        return true
+    }
+}
+
+class MaskValidade: NSObject, UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.count == 2 && string.count != 0 { textField.text = textField.text! + "/" }
+        if textField.text?.count == 5 && string.count != 0 { return false }
+        return true
+    }
+}
+
+class MaskNumberCreditCard: NSObject, UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.count == 4 && string.count != 0 { textField.text = textField.text! + " " }
+        if textField.text?.count == 9 && string.count != 0 { textField.text = textField.text! + " " }
+        if textField.text?.count == 14 && string.count != 0 { textField.text = textField.text! + " " }
+        if textField.text?.count == 19 && string.count != 0 { return false }
+        return true
+    }
+}
+
+class MaskCVV: NSObject, UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.count == 3 && string.count != 0 { return false }
         return true
     }
 }

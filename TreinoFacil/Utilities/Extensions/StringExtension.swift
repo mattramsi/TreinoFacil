@@ -72,5 +72,23 @@ extension String {
     
 }
 
+extension StringProtocol {
+    var isValidCNPJ: Bool {
+        let numbers = compactMap({ Int(String($0)) })
+        guard numbers.count == 14 && Set(numbers).count != 1 else { return false }
+        func digitCalculator(_ slice: ArraySlice<Int>) -> Int {
+            var number = 1
+            let digit = 11 - slice.reversed().reduce(into: 0) {
+                number += 1
+                $0 += $1 * number
+                if number == 9 { number = 1 }
+                } % 11
+            return digit > 9 ? 0 : digit
+        }
+        let dv1 = digitCalculator(numbers.prefix(12))
+        let dv2 = digitCalculator(numbers.prefix(13))
+        return dv1 == numbers[12] && dv2 == numbers[13]
+    }
+}
 
 

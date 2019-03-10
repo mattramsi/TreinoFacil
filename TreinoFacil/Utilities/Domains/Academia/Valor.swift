@@ -15,12 +15,15 @@ import Foundation
 import ObjectMapper
 
 struct Valor : Mappable {
-	var quantidade : Double?
+	var quantidade : NSDecimalNumber?
 	var moeda : String?
 
-	init?(map: Map) {
-
-	}
+	init?(map: Map) {}
+    
+    init(quantidade: NSDecimalNumber, moeda: String) {
+        self.quantidade = quantidade
+        self.moeda = moeda
+    }
 
 	mutating func mapping(map: Map) {
 

@@ -46,9 +46,6 @@ class Form {
             button.layer.backgroundColor = Colors.pink.cgColor
         }
         
-        for i in 0...(fields.count - 1) {
-            print( "\(i)* campo: \(fields[i].isValid()) ")
-        }
     }
     
 

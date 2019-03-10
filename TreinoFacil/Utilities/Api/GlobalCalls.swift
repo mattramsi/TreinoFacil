@@ -8,90 +8,135 @@
 
 import Alamofire
 import SwiftyJSON
-import PromiseKit
 import ObjectMapper
 
-
 class GlobalCalls{
-    
-    
-    static let shared = GlobalCalls()
     
     static let base_aquisicao = "https://jbz2e97r7h.execute-api.us-east-1.amazonaws.com/tst/cadastro"
     static let base_eventos   = "https://xpxn8yrtf8.execute-api.us-east-1.amazonaws.com/tst"
     
-    static func defaultHeader() -> HTTPHeaders {
+    static func setHeader(with clienteId: Bool) -> HTTPHeaders {
         var header = HTTPHeaders()
         header["Content-Type"] = "application/json"
+        if clienteId {
+            header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
+        }
         return header
     }
     
-    static func basico(body: [String:Any])  -> Promise<JSON> {
+    static func basico(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
         let url = base_aquisicao + "/basico/"
-        let header = defaultHeader()
-        return Service.sharedInstance.post(url: url, nomeMetodo: "basico", body: body, header: header)
+        let header = setHeader(with: false)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "basico", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
-    static func login(body: [String:Any])  -> Promise<JSON> {
-        let url = base_aquisicao + "/login/"
-         let header = defaultHeader()
-        return Service.sharedInstance.post(url: url, nomeMetodo: "basico", body: body, header: header)
+    static func login(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_aquisicao +  "/login/"
+        let header = setHeader(with: false)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "login", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
-    static func esqueci(body: [String:Any])  -> Promise<JSON> {
-        let url = base_aquisicao + "/esqueci/"
-         let header = defaultHeader()
-        return Service.sharedInstance.post(url: url, nomeMetodo: "basico", body: body, header: header)
+    static func esqueci(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_aquisicao +  "/esqueci/"
+        let header = setHeader(with: false)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "esqueci", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
-    static func celular(body: [String:Any])  -> Promise<JSON> {
-        let url = base_aquisicao + "/celular/"
-        var header = defaultHeader()
-        header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
-        return Service.sharedInstance.post(url: url, nomeMetodo: "basico", body: body, header: header)
+    static func celular(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_aquisicao +  "/celular/"
+        let header = setHeader(with: true)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "celular", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
-    static func evento(body: [String:Any])  -> Promise<JSON> {
-        let url = base_aquisicao + "/celular/"
-        var header = defaultHeader()
-        header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
-        return Service.sharedInstance.post(url: url, nomeMetodo: "evento", body: body, header: header)
+    static func evento(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/evento/"
+        let header = setHeader(with: true)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "evento", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
-    static func agendamento(body: [String:Any])  -> Promise<JSON> {
-        let url = base_eventos + "/agendamento/"
-        var header = defaultHeader()
-        header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
-        return Service.sharedInstance.post(url: url, nomeMetodo: "agendamento", body: body, header: header)
+    static func agendamento(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/agendamento/"
+        let header = setHeader(with: false)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "agendamento", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
-    static func local(body: [String:Any])  -> Promise<JSON> {
+    static func local(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/local/"
+        let header = setHeader(with: true)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "local", queryParams: nil, body: body, responseHandler: responseHandler)
+    }
+    
+    static func saveCartao(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/cartao/"
+        let header = setHeader(with: true)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "saveCartao", queryParams: nil, body: body, responseHandler: responseHandler)
+    }
+    
+    static func getCards(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/cartao/"
+        let header = setHeader(with: true)
+        
+        return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getCards", queryParams: nil, responseHandler: responseHandler)
+    }
+    
+    static func deleteCard(networkRequestDelegate: NetworkRequestsDelegate, cartaoId: String, responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/cartao/" + cartaoId
+        let header = setHeader(with: true)
+        
+        return Service.delete(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getCards", queryParams: nil, body: nil, responseHandler: responseHandler)
+    }
+    
+    static func getAgendamento(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/agendamento/"
+        let header = setHeader(with: true)
+        
+        return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getAgendamento", queryParams: nil, responseHandler: responseHandler)
+    }
+    
+    static func getEvento(networkRequestDelegate: NetworkRequestsDelegate, lat: String, lng: String, responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/evento?lat=23.5680812&lng=-46.5522709"
+        let header = setHeader(with: false)
+        
+        return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getEvento", queryParams: nil, responseHandler: responseHandler)
+    }
+    
+    static func getLocal(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
         let url = base_eventos + "/local/"
-        var header = defaultHeader()
-        header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
-        return Service.sharedInstance.post(url: url, nomeMetodo: "local", body: body, header: header)
+        let header = setHeader(with: false)
+        
+        return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getLocal", queryParams: nil, responseHandler: responseHandler)
     }
     
-    static func getAgendamento() -> Promise<JSON> {
-    
-        let url = base_eventos + "/agendamento/"
-        var header = defaultHeader()
-        header["clienteId"] = Utils.getStorage(name: "clienteId") as? String
-        return Service.sharedInstance.get(url: url, nomeMetodo: "agendamento", header: header)
+    static func getAreaLogada(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_aquisicao + "/area-logada"
+        let header = setHeader(with: true)
+        
+        return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getAreaLogada", queryParams: nil, responseHandler: responseHandler)
     }
     
-    static func getEvento(lat: String, lng: String) -> Promise<JSON> {
-        let url = base_eventos + "/evento?lat=23.5680812&lng=-46.5522709"
-        let header = defaultHeader()
-        return Service.sharedInstance.get(url: url, nomeMetodo: "getEvento", header: header)
-    }
     
- 
     
-    static func getLocal() -> Promise<JSON> {
-        let url = base_eventos + "/local/"
-        let header = defaultHeader()
-        return Service.sharedInstance.get(url: url, nomeMetodo: "getLocal", header: header)
-    }
     
 }
+
+
+//GlobalCalls.getDadosCartao(networkRequestDelegate: self, responseHandler: ResponseHandler(
+//    startHandler: {
+//        
+//}, finishHandler: {
+//    
+//}, successHandler: { (result) in
+//    
+//
+//}, failureHandler: { (error) in
+//    print(error)
+//  
+//}))

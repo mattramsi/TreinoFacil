@@ -260,5 +260,44 @@ class Utils {
     }
 
     
+    static func getAreaLogada(controller: UIViewController & NetworkRequestsDelegate) {
+        
+        GlobalCalls.getAreaLogada(networkRequestDelegate: controller, responseHandler: ResponseHandler(startHandler: {
+            
+        }, finishHandler: {
+            
+        }, successHandler: { (result) in
+            
+            let id = result["id"].intValue
+            print(id)
+            switch id {
+                
+            case 1:
+                //celular
+                DispatchQueue.main.async(){
+                    controller.performSegue(withIdentifier: "toAssinatura", sender: nil)
+                }
+                break
+            case 2:
+                //perguntas
+                DispatchQueue.main.async(){
+                    controller.performSegue(withIdentifier: "toHome", sender: nil)
+                }
+                
+                break
+            case 101:
+                DispatchQueue.main.async(){
+                    controller.performSegue(withIdentifier: "toHome", sender: nil)
+                }
+                break
+            default:
+                break
+            }
+            
+            
+        }, failureHandler: { (error) in
+            
+        }))
+    }
 
 }

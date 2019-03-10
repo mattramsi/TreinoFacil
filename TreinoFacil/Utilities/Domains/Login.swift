@@ -27,7 +27,7 @@ class Registro : Mappable {
     
     required init?(map: Map) {}
     
-    init(cpf: String, nome: String, email: String, dtNascimento: String, senha: String) {
+    init(cpf: String, nome: String, email: String, dtNascimento: String?, senha: String) {
         self.cpf = cpf
         self.nome = nome
         self.email = email
@@ -75,7 +75,7 @@ class RegistroSenha : Mappable {
     
     init(cpf: String, senha: String,  token: String) {
         self.cpf = cpf
-        self.cpf = cpf
+        self.senha = senha
         if !token.isEmpty { self.token = token }
     }
     

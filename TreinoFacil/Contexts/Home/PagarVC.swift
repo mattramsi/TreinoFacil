@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PagarVC: UIViewController {
+class PagarVC: BaseViewController {
 
     
     @IBOutlet weak var image: UIImageView!
@@ -41,4 +41,23 @@ class PagarVC: UIViewController {
         self.horario = horario
     }
     
+    @IBAction func selectPaymentCard(_ sender: Any) {
+        
+        let eventoId = self.academia.id
+        let dataHorario = self.horario
+        
+        let agendarApiModel = AgendarApiModel(eventoId: eventoId, dataHorario: dataHorario, cartaoId: nil)
+        
+        
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "FormasDePagamentoTC") as? FormasDePagamentoTC {
+            controller.agendarApiModel = agendarApiModel
+            self.present(controller, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

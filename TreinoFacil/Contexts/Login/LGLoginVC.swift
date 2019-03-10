@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import ObjectMapper
 
-class LGLoginVC: UIViewController, FormBase {
+class LGLoginVC: BaseViewController, FormBase {
    
     @IBOutlet weak var tf_cpf: UITextField!
     @IBOutlet weak var tf_senha: UITextField!
@@ -60,20 +60,78 @@ class LGLoginVC: UIViewController, FormBase {
     @IBAction func logar(_ sender: Any) {
         let obj = formatFormToSend()
         
-        GlobalCalls.login(body: obj).done { result -> Void in
-            print(result)
+    
+        GlobalCalls.login(networkRequestDelegate: self, body: obj, responseHandler: ResponseHandler(
+            startHandler: {
+            self.btn_logar.loadingIndicator(true)
+        }, finishHandler: {
+            self.btn_logar.loadingIndicator(false)
+        }, successHandler: { (result) in
+            
+           
             if result["status"].stringValue == "200" {
                 
-                self.performSegue(withIdentifier: "toHome", sender: nil)
+               
                 Utils.setStorage(name: "clienteId", value: result["result"].stringValue)
                 print("TOKEN: ", Utils.getStorage(name: "clienteId"))
                 
+                if Utils.getClienteId.isEmpty {
+                    DispatchQueue.main.async(){
+                        self.performSegue(withIdentifier: "toLogin", sender: nil)
+                    }
+                } else {
+                    self.getAreaLogada()
+                }
+                
             } else if result["id"].intValue ==  99 {
+                
                 Utils.openAlert(message: result["message"].stringValue)
             }
-            
-        }.catch { error in print(error) }
+        
+        }, failureHandler: { (error) in
+            print(error)
+        
+        }))
+
 
     }
     
+    func getAreaLogada() {
+        
+        GlobalCalls.getAreaLogada(networkRequestDelegate: self, responseHandler: ResponseHandler(startHandler: {
+            
+        }, finishHandler: {
+            
+        }, successHandler: { (result) in
+            
+            let id = result["id"].intValue
+            print(id)
+            switch id {
+                
+            case 1:
+                //celular
+                DispatchQueue.main.async(){
+                    self.performSegue(withIdentifier: "toAssinatura", sender: nil)
+                }
+                break
+            case 2:
+                //perguntas
+                DispatchQueue.main.async(){
+                    self.performSegue(withIdentifier: "toHome", sender: nil)
+                }
+                break
+            case 101:
+                DispatchQueue.main.async(){
+                    self.performSegue(withIdentifier: "toHome", sender: nil)
+                }
+                break
+            default:
+                break
+            }
+            
+            
+        }, failureHandler: { (error) in
+            
+        }))
+    }
 }

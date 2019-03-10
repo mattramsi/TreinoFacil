@@ -16,7 +16,7 @@ class HorariosCell: UITableViewCell {
     
 }
 
-class HorariosTC: UITableViewController {
+class HorariosTC: BaseTableViewController {
     
     var academia: Academia!
 
@@ -58,10 +58,15 @@ class HorariosTC: UITableViewController {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "PagarVC") as? PagarVC {
             controller.setAcademia(academia: self.academia, horario: horarioSelecionado)
-            self.present(controller, animated: true, completion: nil)
+             DispatchQueue.main.async(execute: {
+                self.present(controller, animated: true, completion: nil)
+             })
         }
     }
     
    
-
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

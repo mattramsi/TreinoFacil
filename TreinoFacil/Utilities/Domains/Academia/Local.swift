@@ -25,9 +25,11 @@ struct Local : Mappable {
 	var lat : Double?
 	var distancia : Double?
 
-	init?(map: Map) {
-
-	}
+	init?(map: Map) {}
+    
+    init(id: String) {
+        self.id = id
+    }
 
 	mutating func mapping(map: Map) {
 

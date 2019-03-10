@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGEsqueceuVC: UIViewController {
+class LGEsqueceuVC: BaseViewController {
     
     
     @IBOutlet weak var tf_cpf: UITextField!
@@ -52,22 +52,35 @@ class LGEsqueceuVC: UIViewController {
 
     var registroSenha: RegistroSenha!
     @IBAction func enviar(_ sender: Any) {
-        let cpf = self.tf_cpf.text?.withoutSpecialCharacters.removingWhitespaces
-        let senha = self.tf_senha.text
+       
+      
         
-        let obj = RegistroSenha(cpf: cpf!, senha: senha!, token: "")
+        guard
+            let cpf = self.tf_cpf.text?.withoutSpecialCharacters.removingWhitespaces,
+            let senha = self.tf_senha.text
+        else {
+            return
+        }
+        
+          print(senha)
+        let obj = RegistroSenha(cpf: cpf, senha: senha, token: "")
         self.registroSenha = obj
         
-        GlobalCalls.esqueci(body: obj.toJSON()).done { result -> Void in
-            print(result)
-            if result["id"].intValue == 102 {
-                self.performSegue(withIdentifier: "toCodeSms", sender: nil)
-            } else {
-                Utils.openAlert(message: result["message"].stringValue)
-            }
-            
-            }.catch { error in print(error) }
-        
+        GlobalCalls.esqueci(networkRequestDelegate: self, body: obj.toJSON(), responseHandler: ResponseHandler(startHandler: {
+            self.btn_send.loadingIndicator(true)
+            }, finishHandler: {
+                self.btn_send.loadingIndicator(false)
+            }, successHandler: { (result) in
+                
+                if result["id"].intValue == 102 {
+                    self.performSegue(withIdentifier: "toCodeSms", sender: nil)
+                } else {
+                    Utils.openAlert(message: result["message"].stringValue)
+                }
+                
+            }, failureHandler: { (error) in
+                
+        }))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

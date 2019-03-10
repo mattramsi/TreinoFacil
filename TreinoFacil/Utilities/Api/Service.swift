@@ -8,56 +8,58 @@
 
 import Alamofire
 import SwiftyJSON
-import PromiseKit
+import ObjectMapper
 
 struct Service {
     
-    static let sharedInstance = Service()
-    private var manager: SessionManager
+    private static let manager: SessionManager = Alamofire.SessionManager.default
     
-    
-    private init() {
-        self.manager = Alamofire.SessionManager.default
-    }
+    // REQUEST PADRÃO ALAMOFIRE
+    static func request(networkRequestDelegate: NetworkRequestsDelegate?, header: HTTPHeaders, url: String, nomeMetodo: String, method: HTTPMethod, queryParams: [String : String]?, body: [String: Any]?, responseHandler: ResponseHandler ) -> DataRequest {
+        
+        responseHandler.startHandler()
+        
+        var urlWithParams = url
+        if queryParams != nil {
+            urlWithParams += "?"
+            for (e, value) in queryParams! {
+                urlWithParams += e+"="+value+"&"
+            }
+            if urlWithParams.last == "&" {
+                urlWithParams.removeLast()
+            }
+        }
 
-    func get(url: String, nomeMetodo: String, header: HTTPHeaders) -> Promise<JSON> {
-    
-        return Promise() { resolver in
-            self.manager.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
-                
-                switch(response.result) {
-                    case .success(let responseObject):
-                        
-                        resolver.fulfill(JSON(responseObject))
-                    
-                    case .failure(let error): print(error); resolver.reject(error)
-                }
-            }
+       let dataRequest: DataRequest = self.manager.request(urlWithParams, method: method, parameters: body, encoding: JSONEncoding.default, headers: header)
+        
+        networkRequestDelegate?.addRequest(dataRequest: dataRequest)
+        
+        dataRequest.responseJSON { dataResponse in
+            responseHandler.onCompleted(dataResponse: dataResponse)
+            networkRequestDelegate?.removeRequest(dataRequest: dataRequest)
         }
+        
+        return dataRequest
     }
     
-    func post(url: String, nomeMetodo: String, body: [String : Any]?, header: HTTPHeaders) -> Promise<JSON> {
+    static func get(networkRequestDelegate: NetworkRequestsDelegate?, header: HTTPHeaders, url: String, nomeMetodo: String, queryParams: [String : String]?, responseHandler: ResponseHandler ) -> DataRequest {
+        return self.request(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: nomeMetodo, method: .get, queryParams: queryParams, body: nil, responseHandler: responseHandler)
+    }
+    
+    static func post(networkRequestDelegate: NetworkRequestsDelegate?, header: HTTPHeaders, url: String, nomeMetodo: String, queryParams: [String : String]?, body: [String: Any]?, responseHandler: ResponseHandler ) -> DataRequest {
        
-        return Promise() { resolver in
-            
-            self.manager.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
-                switch(response.result) {
-                    case .success(let responseObject):
-                        print(response.response)
-                        resolver.fulfill(JSON(responseObject))
-                    
-                    case .failure(let error): print(error); resolver.reject(error)
-                }
-            }
-        }
+        return self.request(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: nomeMetodo, method: .post, queryParams: queryParams, body: body, responseHandler: responseHandler)
     }
     
-  
- 
+    static func put(networkRequestDelegate: NetworkRequestsDelegate?, header: HTTPHeaders, url: String, nomeMetodo: String, queryParams: [String : String]?, body: [String: Any]?, responseHandler: ResponseHandler ) -> DataRequest {
+        
+        return self.request(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: nomeMetodo, method: .put, queryParams: queryParams, body: body, responseHandler: responseHandler)
+    }
+    
+    static func delete(networkRequestDelegate: NetworkRequestsDelegate?, header: HTTPHeaders, url: String, nomeMetodo: String, queryParams: [String : String]?, body: [String: Any]?, responseHandler: ResponseHandler ) -> DataRequest {
+        
+        return self.request(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: nomeMetodo, method: .delete, queryParams: queryParams, body: body, responseHandler: responseHandler)
+    }
+    
 
 }
-
-
-
-    
-

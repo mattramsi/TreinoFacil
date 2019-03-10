@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGSucessoVC: UIViewController {
+class LGSucessoVC: BaseViewController {
 
     @IBOutlet weak var btn_sair: UIButton!
     
@@ -30,4 +30,12 @@ class LGSucessoEsqueceuVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }

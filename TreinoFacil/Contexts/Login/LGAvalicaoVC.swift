@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGAvalicaoVC: UIViewController {
+class LGAvalicaoVC: BaseViewController {
     
     @IBOutlet weak var btn_enviar: UIButton!
     
@@ -17,6 +17,7 @@ class LGAvalicaoVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    
 
 }

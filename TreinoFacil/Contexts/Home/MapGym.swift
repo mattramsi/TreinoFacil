@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapGymVC: BaseViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var academias = [Academia]()
     @IBOutlet weak var mapView: MKMapView!
@@ -24,23 +24,7 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
         self.setMark()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//
-//        if self.locationManager != nil {
-//            if let userLocation = self.locationManager.location?.coordinate {
-//                let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 200, 200)
-//                mapView.setRegion(viewRegion, animated: false)
-//            }
-//
-//            DispatchQueue.main.async {
-//                self.locationManager.startUpdatingLocation()
-//            }
-//        }
-       
-    }
-   
-    
+  
     func setListGym(array: [Academia]){
        self.removeMarks()
        self.academias = array
@@ -103,6 +87,20 @@ class MapGymVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             pin.title = academia.local?.nome
             pin.coordinate = CLLocationCoordinate2D(latitude: academia.local?.lat as! Double, longitude: academia.local?.lng as! Double)
             mapView.addAnnotation(pin)
+        }
+
+        if self.locationManager != nil {
+            if let userLocation = self.locationManager.location?.coordinate {
+
+                let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: -23.5954644)!, longitude: CLLocationDegrees(exactly: -46.6917095)!)
+
+                let viewRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000)
+                mapView.setRegion(viewRegion, animated: false)
+            }
+
+            DispatchQueue.main.async {
+                self.locationManager.startUpdatingLocation()
+            }
         }
     }
     

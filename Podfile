@@ -11,4 +11,5 @@ target 'TreinoFacil' do
     pod "PromiseKit", "~> 6.0"
     pod 'ObjectMapper', '~> 3.3'
     pod 'IQKeyboardManagerSwift', '5.0.0'	
+    pod "CreditCardValidator"
 end

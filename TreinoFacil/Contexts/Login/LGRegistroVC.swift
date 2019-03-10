@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGRegistroVC: UIViewController, FormBase {
+class LGRegistroVC: BaseViewController, FormBase {
 
     @IBOutlet weak var tf_cpf: UITextField!
     @IBOutlet weak var tf_nome: UITextField!
@@ -86,19 +86,24 @@ class LGRegistroVC: UIViewController, FormBase {
     
     @IBAction func registrar(_ sender: Any) {
         let obj = formatFormToSend()
-        print(obj)
-        GlobalCalls.basico(body: obj).done { result -> Void in
-            print(result)
+
+        GlobalCalls.basico(networkRequestDelegate: self, body: obj, responseHandler: ResponseHandler(startHandler: {
+            self.btn_registrar.loadingIndicator(true)
+        }, finishHandler: {
+            self.btn_registrar.loadingIndicator(false)
+        }, successHandler: { (result) in
+      
             if result["status"].stringValue == "200" {
-                 self.performSegue(withIdentifier: "toAvaliation", sender: nil)
+                self.performSegue(withIdentifier: "toAvaliation", sender: nil)
                 Utils.openAlert(message: "Registro com sucesso!")
                 Utils.setStorage(name: "clienteId", value: result["result"].stringValue)
-               
+                
             } else if result["id"].intValue ==  100 {
                 Utils.openAlert(message: result["message"].stringValue)
             }
+        }, failureHandler: { (error) in
             
-        }.catch { error in print(error) }
+        }))
         
     }
 }

@@ -15,7 +15,7 @@ class ListGymsCell: UITableViewCell {
   
 }
 
-class ListGymsVC: UITableViewController {
+class ListGymsVC: BaseTableViewController {
 
     
     var academias = [Academia]()
@@ -24,6 +24,8 @@ class ListGymsVC: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+  
 
     func setListGym(array: [Academia]){
         self.academias = array
@@ -58,7 +60,8 @@ class ListGymsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let academiaSelecionada = academias[indexPath.row]
-   
+        
+        print("ola", academiaSelecionada.toJSON())
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "HorariosTC") as? HorariosTC {
             controller.academia = academiaSelecionada

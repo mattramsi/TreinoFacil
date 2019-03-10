@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGCodeEsqueceuVC: UIViewController, UITextFieldDelegate {
+class LGCodeEsqueceuVC: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tf_1: UITextField!
     @IBOutlet weak var tf_2: UITextField!
@@ -22,6 +22,7 @@ class LGCodeEsqueceuVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
         
         tf_1.tag = 0
         tf_2.tag = 1
@@ -29,6 +30,7 @@ class LGCodeEsqueceuVC: UIViewController, UITextFieldDelegate {
         tf_4.tag = 3
         tf_5.tag = 5
         
+        tf_1.becomeFirstResponder()
         tf_1.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         tf_2.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         tf_3.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
@@ -91,7 +93,11 @@ class LGCodeEsqueceuVC: UIViewController, UITextFieldDelegate {
             let obj = self.registroSenha.toJSON()
             print(obj)
             
-            GlobalCalls.esqueci(body: obj).done { result -> Void in
+            GlobalCalls.esqueci(networkRequestDelegate: self, body: obj, responseHandler: ResponseHandler(startHandler: {
+                 self.btn_send.loadingIndicator(true)
+            }, finishHandler: {
+                 self.btn_send.loadingIndicator(false)
+            }, successHandler: { (result) in
                 print(result)
                 
                 if result["status"].stringValue == "200" {
@@ -100,7 +106,9 @@ class LGCodeEsqueceuVC: UIViewController, UITextFieldDelegate {
                     Utils.openAlert(message: result["message"].stringValue)
                 }
                 
-                }.catch { error in print(error) }
+            }, failureHandler: { (error) in
+            
+            }))
         }
     }
 }

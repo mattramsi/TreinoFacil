@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/matheusramos/Documents/Projects/ProjetoIOS11/TreinoFacil/TreinoFacil/Utilities/Domains/CartaoCredito.swift">
+   </FileRef>
+   <FileRef
       location = "group:TreinoFacil.xcodeproj">
    </FileRef>
    <FileRef

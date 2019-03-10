@@ -11,7 +11,7 @@ import MapKit
 import SwiftyJSON
 import ObjectMapper
 
-class PesquisaVC: UIViewController, UISearchBarDelegate {
+class PesquisaVC: BaseViewController, UISearchBarDelegate {
     
     var x: Bool = false
     @IBOutlet weak var changeViewBtn: UIButton!
@@ -41,7 +41,6 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
  
     @IBAction func changeView(_ sender: Any) {
         
-        self.getCurrentLocation()
         
         if !x  {
             x = true
@@ -65,6 +64,8 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
             add(asChildViewController: listVC)
         }
         
+        self.getCurrentLocation()
+        
     }
     
     private func add(asChildViewController viewController: UIViewController) {
@@ -74,6 +75,10 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
         self.content.addSubview(viewController.view)
         self.addChildViewController(viewController)
         viewController.didMove(toParentViewController: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     
@@ -92,8 +97,9 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
     }
     
     func getCurrentLocation() {
-
+        
         let authorizationStatus = CLLocationManager.authorizationStatus()
+        
         if (authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse ||
             authorizationStatus == CLAuthorizationStatus.authorizedAlways){
             
@@ -102,21 +108,34 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
             guard let currentLocation = locManager.location else {
                 return
             }
-            
+
             print("LATITUDE: ", currentLocation.coordinate.latitude)
             print("longitude: ", currentLocation.coordinate.longitude)
             let lat = String(currentLocation.coordinate.latitude)
             let lng = String(currentLocation.coordinate.longitude)
-            
-            GlobalCalls.getEvento(lat: "2", lng: "2").done { result -> Void in
-                for item in result["Items"].arrayValue {
-                    let academia: Academia = Mapper<Academia>().map(JSON: item.dictionaryObject!)!
-                    self.academias.append(academia)
-                }
+  
+            GlobalCalls.getEvento(networkRequestDelegate: self, lat: lat, lng: lng, responseHandler: ResponseHandler(startHandler: {
                 
-                self.mapVC.setListGym(array: self.academias)
-                self.listVC.setListGym(array: self.academias)
-            }.catch { error in print(error) }
+                }, finishHandler: {
+                    
+                }, successHandler: { (result) in
+                    
+                    for item in result["Items"].arrayValue {
+                        let academia: Academia = Mapper<Academia>().map(JSON: item.dictionaryObject!)!
+                        self.academias.append(academia)
+                    }
+                    
+                    
+                    self.mapVC.setListGym(array: self.academias)
+                    self.listVC.setListGym(array: self.academias)
+                        
+                }, failureHandler: { (error) in
+                    
+            }))
+            
+        } else {
+            locManager.requestLocation()
+            self.getCurrentLocation()
         }
 
     }
@@ -157,4 +176,6 @@ class PesquisaVC: UIViewController, UISearchBarDelegate {
             searchActive = true;
         }
     }
+    
+    
 }

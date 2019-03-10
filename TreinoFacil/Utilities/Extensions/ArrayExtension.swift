@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 extension Array {
     func find(includedElement: (Validatable) -> Bool) -> Int? {
@@ -18,4 +18,16 @@ extension Array {
         }
         return nil
     }
+   
+
+}
+
+extension Array where Element: Equatable {
+    
+    // Remove first collection element that is equal to the given `object`:
+    mutating func remove(object: Element) {
+        guard let index = index(of: object) else {return}
+        remove(at: index)
+    }
+    
 }

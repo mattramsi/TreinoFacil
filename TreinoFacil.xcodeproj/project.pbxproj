@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17142E9722347C0B00AFF4A0 /* CartaoCredito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17142E9622347C0A00AFF4A0 /* CartaoCredito.swift */; };
 		172EC673222C79FA00684639 /* GymAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172EC672222C79FA00684639 /* GymAnnotationView.xib */; };
 		172EC675222C7A6200684639 /* GymAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EC674222C7A6200684639 /* GymAnnotationView.swift */; };
 		172EC679222CC9AF00684639 /* HorariosTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EC678222CC9AF00684639 /* HorariosTC.swift */; };
 		17650F0496F74BE59AD8E0C2 /* Pods_TreinoFacil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F7762947DA6172D00D8A1 /* Pods_TreinoFacil.framework */; };
+		176605902234B021008EEF8B /* MeusCartoesTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766058F2234B021008EEF8B /* MeusCartoesTC.swift */; };
+		176605932234BBA7008EEF8B /* Corporativo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176605922234BBA7008EEF8B /* Corporativo.storyboard */; };
+		176605952234C58C008EEF8B /* LGLoginCorporativoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */; };
+		176605972234C654008EEF8B /* LGRegistroCorporativoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */; };
+		176605992234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605982234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift */; };
+		1766059B2234D1F3008EEF8B /* CadastroAcademiaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766059A2234D1F3008EEF8B /* CadastroAcademiaVC.swift */; };
+		1766059D2234D444008EEF8B /* CadastroAulaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766059C2234D444008EEF8B /* CadastroAulaVC.swift */; };
+		176605A52234D554008EEF8B /* LocalToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605A12234D554008EEF8B /* LocalToApi.swift */; };
 		17942BBF21A49FC800E6CA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942BBE21A49FC800E6CA06 /* AppDelegate.swift */; };
 		17942BC121A49FC800E6CA06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942BC021A49FC800E6CA06 /* ViewController.swift */; };
 		17942BC421A49FC800E6CA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17942BC221A49FC800E6CA06 /* Main.storyboard */; };
@@ -30,8 +39,6 @@
 		17942CB621A4A09C00E6CA06 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C1621A4A09B00E6CA06 /* TextFieldExtension.swift */; };
 		17942CB721A4A09C00E6CA06 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C1721A4A09B00E6CA06 /* DoubleExtension.swift */; };
 		17942CB821A4A09C00E6CA06 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C1921A4A09B00E6CA06 /* Colors.swift */; };
-		17942CBD21A4A09C00E6CA06 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C2121A4A09B00E6CA06 /* Service.swift */; };
-		17942CBE21A4A09C00E6CA06 /* GlobalCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C2221A4A09B00E6CA06 /* GlobalCalls.swift */; };
 		17942CBF21A4A09C00E6CA06 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C2421A4A09B00E6CA06 /* TextFieldValidator.swift */; };
 		17942CC321A4A09C00E6CA06 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C2821A4A09B00E6CA06 /* Validatable.swift */; };
 		17942CC521A4A09C00E6CA06 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942C2A21A4A09B00E6CA06 /* Form.swift */; };
@@ -58,13 +65,33 @@
 		17942D4E21A4D72100E6CA06 /* ListGymsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D4D21A4D72100E6CA06 /* ListGymsVC.swift */; };
 		17942D5021A4D7A600E6CA06 /* MapGym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D4F21A4D7A600E6CA06 /* MapGym.swift */; };
 		17942D5221A4D7FA00E6CA06 /* PesquisaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */; };
+		17A201B222342D480042D333 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201B022342D480042D333 /* ApiError.swift */; };
+		17A201B322342D480042D333 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201B122342D480042D333 /* Errors.swift */; };
+		17A201B5223446750042D333 /* CartaoCreditoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A201B4223446750042D333 /* CartaoCreditoCell.xib */; };
+		17A201B7223446E60042D333 /* AddCartaoCreditoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A201B6223446E60042D333 /* AddCartaoCreditoCell.xib */; };
+		17A201BA223449290042D333 /* FormasDePagamentoTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201B9223449290042D333 /* FormasDePagamentoTC.swift */; };
+		17A201BC22344AEC0042D333 /* FormaDePagamentosCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201BB22344AEC0042D333 /* FormaDePagamentosCells.swift */; };
+		17A201BE22344DD40042D333 /* CadastroCartaoCreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201BD22344DD40042D333 /* CadastroCartaoCreditVC.swift */; };
+		17C771AF22342663001FCA96 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C771AC22342663001FCA96 /* ResponseHandler.swift */; };
+		17C771B022342663001FCA96 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C771AD22342663001FCA96 /* Service.swift */; };
+		17C771B122342663001FCA96 /* GlobalCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C771AE22342663001FCA96 /* GlobalCalls.swift */; };
+		17C771B322342852001FCA96 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C771B222342852001FCA96 /* BaseViewController.swift */; };
 		17DE589221A5E48A0065E529 /* PagarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE589121A5E48A0065E529 /* PagarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17142E9622347C0A00AFF4A0 /* CartaoCredito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartaoCredito.swift; path = /Users/matheusramos/Documents/Projects/ProjetoIOS11/TreinoFacil/TreinoFacil/Utilities/Domains/CartaoCredito.swift; sourceTree = "<absolute>"; };
 		172EC672222C79FA00684639 /* GymAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GymAnnotationView.xib; sourceTree = "<group>"; };
 		172EC674222C7A6200684639 /* GymAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAnnotationView.swift; sourceTree = "<group>"; };
 		172EC678222CC9AF00684639 /* HorariosTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorariosTC.swift; sourceTree = "<group>"; };
+		1766058F2234B021008EEF8B /* MeusCartoesTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusCartoesTC.swift; sourceTree = "<group>"; };
+		176605922234BBA7008EEF8B /* Corporativo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Corporativo.storyboard; sourceTree = "<group>"; };
+		176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGLoginCorporativoVC.swift; sourceTree = "<group>"; };
+		176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGRegistroCorporativoVC.swift; sourceTree = "<group>"; };
+		176605982234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhasAcademiasTCTableViewController.swift; sourceTree = "<group>"; };
+		1766059A2234D1F3008EEF8B /* CadastroAcademiaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroAcademiaVC.swift; sourceTree = "<group>"; };
+		1766059C2234D444008EEF8B /* CadastroAulaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroAulaVC.swift; sourceTree = "<group>"; };
+		176605A12234D554008EEF8B /* LocalToApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalToApi.swift; sourceTree = "<group>"; };
 		17942BBB21A49FC800E6CA06 /* TreinoFacil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreinoFacil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17942BBE21A49FC800E6CA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17942BC021A49FC800E6CA06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +113,6 @@
 		17942C1621A4A09B00E6CA06 /* TextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		17942C1721A4A09B00E6CA06 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		17942C1921A4A09B00E6CA06 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		17942C2121A4A09B00E6CA06 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		17942C2221A4A09B00E6CA06 /* GlobalCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCalls.swift; sourceTree = "<group>"; };
 		17942C2421A4A09B00E6CA06 /* TextFieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 		17942C2821A4A09B00E6CA06 /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
 		17942C2A21A4A09B00E6CA06 /* Form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
@@ -114,6 +139,17 @@
 		17942D4D21A4D72100E6CA06 /* ListGymsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGymsVC.swift; sourceTree = "<group>"; };
 		17942D4F21A4D7A600E6CA06 /* MapGym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGym.swift; sourceTree = "<group>"; };
 		17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaVC.swift; sourceTree = "<group>"; };
+		17A201B022342D480042D333 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		17A201B122342D480042D333 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		17A201B4223446750042D333 /* CartaoCreditoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartaoCreditoCell.xib; sourceTree = "<group>"; };
+		17A201B6223446E60042D333 /* AddCartaoCreditoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCartaoCreditoCell.xib; sourceTree = "<group>"; };
+		17A201B9223449290042D333 /* FormasDePagamentoTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormasDePagamentoTC.swift; sourceTree = "<group>"; };
+		17A201BB22344AEC0042D333 /* FormaDePagamentosCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormaDePagamentosCells.swift; sourceTree = "<group>"; };
+		17A201BD22344DD40042D333 /* CadastroCartaoCreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroCartaoCreditVC.swift; sourceTree = "<group>"; };
+		17C771AC22342663001FCA96 /* ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		17C771AD22342663001FCA96 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		17C771AE22342663001FCA96 /* GlobalCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCalls.swift; sourceTree = "<group>"; };
+		17C771B222342852001FCA96 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		17DE589121A5E48A0065E529 /* PagarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagarVC.swift; sourceTree = "<group>"; };
 		4D2F7762947DA6172D00D8A1 /* Pods_TreinoFacil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreinoFacil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		744C53A9B84ECAFD9D4B6E71 /* Pods-TreinoFacil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreinoFacil.release.xcconfig"; path = "Pods/Target Support Files/Pods-TreinoFacil/Pods-TreinoFacil.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,12 +168,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17142E9322345B6E00AFF4A0 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		172EC671222C79E400684639 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
 				172EC672222C79FA00684639 /* GymAnnotationView.xib */,
+				17A201B4223446750042D333 /* CartaoCreditoCell.xib */,
+				17A201B6223446E60042D333 /* AddCartaoCreditoCell.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		176605912234BB8E008EEF8B /* Corporativo */ = {
+			isa = PBXGroup;
+			children = (
+				176605922234BBA7008EEF8B /* Corporativo.storyboard */,
+				1766059C2234D444008EEF8B /* CadastroAulaVC.swift */,
+				176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */,
+				176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */,
+				176605982234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift */,
+				1766059A2234D1F3008EEF8B /* CadastroAcademiaVC.swift */,
+			);
+			path = Corporativo;
+			sourceTree = "<group>";
+		};
+		1766059E2234D554008EEF8B /* LocalToApi */ = {
+			isa = PBXGroup;
+			children = (
+				176605A12234D554008EEF8B /* LocalToApi.swift */,
+			);
+			path = LocalToApi;
 			sourceTree = "<group>";
 		};
 		17942BB221A49FC800E6CA06 = {
@@ -176,6 +242,7 @@
 		17942BD021A4A09B00E6CA06 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				17142E9322345B6E00AFF4A0 /* Enums */,
 				17942BD121A4A09B00E6CA06 /* Domains */,
 				17942C0721A4A09B00E6CA06 /* Constants */,
 				17942C0A21A4A09B00E6CA06 /* Others */,
@@ -191,6 +258,9 @@
 		17942BD121A4A09B00E6CA06 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				1766059E2234D554008EEF8B /* LocalToApi */,
+				17142E9622347C0A00AFF4A0 /* CartaoCredito.swift */,
+				17A201AF22342D480042D333 /* ResponseError */,
 				17942D4421A4D3F200E6CA06 /* Agendamento */,
 				17942D3421A4D3A200E6CA06 /* Academia */,
 				17942D1D21A4B3FD00E6CA06 /* Login.swift */,
@@ -242,8 +312,10 @@
 		17942C2021A4A09B00E6CA06 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				17942C2121A4A09B00E6CA06 /* Service.swift */,
-				17942C2221A4A09B00E6CA06 /* GlobalCalls.swift */,
+				17C771B222342852001FCA96 /* BaseViewController.swift */,
+				17C771AC22342663001FCA96 /* ResponseHandler.swift */,
+				17C771AD22342663001FCA96 /* Service.swift */,
+				17C771AE22342663001FCA96 /* GlobalCalls.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -271,6 +343,7 @@
 		17942D0921A4A87E00E6CA06 /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
+				176605912234BB8E008EEF8B /* Corporativo */,
 				17942D1F21A4CE2700E6CA06 /* Home */,
 				17942D0A21A4A88800E6CA06 /* Login */,
 			);
@@ -306,6 +379,10 @@
 				17DE589121A5E48A0065E529 /* PagarVC.swift */,
 				172EC674222C7A6200684639 /* GymAnnotationView.swift */,
 				172EC678222CC9AF00684639 /* HorariosTC.swift */,
+				17A201B9223449290042D333 /* FormasDePagamentoTC.swift */,
+				17A201BB22344AEC0042D333 /* FormaDePagamentosCells.swift */,
+				17A201BD22344DD40042D333 /* CadastroCartaoCreditVC.swift */,
+				1766058F2234B021008EEF8B /* MeusCartoesTC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -328,6 +405,16 @@
 			);
 			name = Agendamento;
 			path = codegen_5bf362ba142d6;
+			sourceTree = "<group>";
+		};
+		17A201AF22342D480042D333 /* ResponseError */ = {
+			isa = PBXGroup;
+			children = (
+				17A201B022342D480042D333 /* ApiError.swift */,
+				17A201B122342D480042D333 /* Errors.swift */,
+			);
+			name = ResponseError;
+			path = ../../../../TriggIos/TriggIos/Common/Domains/ResponseError;
 			sourceTree = "<group>";
 		};
 		585A01F3775842545B4A9802 /* Frameworks */ = {
@@ -411,7 +498,10 @@
 				17942BC621A49FCA00E6CA06 /* Assets.xcassets in Resources */,
 				17942D2121A4CE3500E6CA06 /* Home.storyboard in Resources */,
 				17942CAB21A4A09C00E6CA06 /* Modelos in Resources */,
+				176605932234BBA7008EEF8B /* Corporativo.storyboard in Resources */,
+				17A201B5223446750042D333 /* CartaoCreditoCell.xib in Resources */,
 				17942BC421A49FC800E6CA06 /* Main.storyboard in Resources */,
+				17A201B7223446E60042D333 /* AddCartaoCreditoCell.xib in Resources */,
 				172EC673222C79FA00684639 /* GymAnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +535,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TreinoFacil/Pods-TreinoFacil-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CreditCardValidator/CreditCardValidator.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -453,6 +544,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CreditCardValidator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
@@ -471,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17942BC121A49FC800E6CA06 /* ViewController.swift in Sources */,
+				17C771AF22342663001FCA96 /* ResponseHandler.swift in Sources */,
 				17942CAE21A4A09C00E6CA06 /* FormViewProtocol.swift in Sources */,
 				17942CB621A4A09C00E6CA06 /* TextFieldExtension.swift in Sources */,
 				17942CAF21A4A09C00E6CA06 /* ArrayExtension.swift in Sources */,
@@ -481,40 +574,54 @@
 				17942D1E21A4B3FD00E6CA06 /* Login.swift in Sources */,
 				17942CC521A4A09C00E6CA06 /* Form.swift in Sources */,
 				17942D3C21A4D3A200E6CA06 /* Local.swift in Sources */,
+				1766059B2234D1F3008EEF8B /* CadastroAcademiaVC.swift in Sources */,
+				17C771B322342852001FCA96 /* BaseViewController.swift in Sources */,
 				17942CB221A4A09C00E6CA06 /* ImageExtension.swift in Sources */,
 				172EC679222CC9AF00684639 /* HorariosTC.swift in Sources */,
 				17942D4C21A4D6C800E6CA06 /* MeusTreinosVC.swift in Sources */,
 				17942D4E21A4D72100E6CA06 /* ListGymsVC.swift in Sources */,
 				17942CB521A4A09C00E6CA06 /* StringExtension.swift in Sources */,
+				17A201BE22344DD40042D333 /* CadastroCartaoCreditVC.swift in Sources */,
+				17C771B022342663001FCA96 /* Service.swift in Sources */,
 				17942D0C21A4A8B400E6CA06 /* LGInitialVC.swift in Sources */,
 				17942D1021A4A8EA00E6CA06 /* LGRegistroVC.swift in Sources */,
 				17DE589221A5E48A0065E529 /* PagarVC.swift in Sources */,
 				17942D1421A4A91B00E6CA06 /* LGAssinatura.swift in Sources */,
-				17942CBE21A4A09C00E6CA06 /* GlobalCalls.swift in Sources */,
 				17942D4821A4D3F200E6CA06 /* Agendamento.swift in Sources */,
 				172EC675222C7A6200684639 /* GymAnnotationView.swift in Sources */,
 				17942CB821A4A09C00E6CA06 /* Colors.swift in Sources */,
 				17942CAC21A4A09C00E6CA06 /* GifAux.swift in Sources */,
+				176605902234B021008EEF8B /* MeusCartoesTC.swift in Sources */,
 				17942CC321A4A09C00E6CA06 /* Validatable.swift in Sources */,
 				17942D5221A4D7FA00E6CA06 /* PesquisaVC.swift in Sources */,
+				17A201B222342D480042D333 /* ApiError.swift in Sources */,
 				17942D1621A4A93100E6CA06 /* LGCodeVC.swift in Sources */,
 				17942CB121A4A09C00E6CA06 /* UIViewControllerExtension.swift in Sources */,
+				176605A52234D554008EEF8B /* LocalToApi.swift in Sources */,
 				17942D5021A4D7A600E6CA06 /* MapGym.swift in Sources */,
-				17942CBD21A4A09C00E6CA06 /* Service.swift in Sources */,
+				176605972234C654008EEF8B /* LGRegistroCorporativoVC.swift in Sources */,
 				17942CB021A4A09C00E6CA06 /* ScrollViewExtension.swift in Sources */,
 				17942D3A21A4D3A200E6CA06 /* Configuracao.swift in Sources */,
 				17942CB421A4A09C00E6CA06 /* ColorExtension.swift in Sources */,
+				176605992234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift in Sources */,
 				17942CB321A4A09C00E6CA06 /* ButtonExtension.swift in Sources */,
 				17942CAD21A4A09C00E6CA06 /* Utils.swift in Sources */,
 				17942D1821A4A94900E6CA06 /* LGSucessoVC.swift in Sources */,
 				17942CC621A4A09C00E6CA06 /* Validators.swift in Sources */,
 				17942D0821A4A09C00E6CA06 /* Masks.swift in Sources */,
 				17942CBF21A4A09C00E6CA06 /* TextFieldValidator.swift in Sources */,
+				17A201BA223449290042D333 /* FormasDePagamentoTC.swift in Sources */,
 				17942D0E21A4A8D500E6CA06 /* LGLoginVC.swift in Sources */,
 				17942D1221A4A90000E6CA06 /* LGAvalicaoVC.swift in Sources */,
+				17C771B122342663001FCA96 /* GlobalCalls.swift in Sources */,
 				17942D1C21A4AD7D00E6CA06 /* LGCodeEsqueceuVC.swift in Sources */,
+				1766059D2234D444008EEF8B /* CadastroAulaVC.swift in Sources */,
 				17942D3B21A4D3A200E6CA06 /* Academia.swift in Sources */,
 				17942D1A21A4AA6A00E6CA06 /* LGEsqueceuVC.swift in Sources */,
+				17A201B322342D480042D333 /* Errors.swift in Sources */,
+				17142E9722347C0B00AFF4A0 /* CartaoCredito.swift in Sources */,
+				176605952234C58C008EEF8B /* LGLoginCorporativoVC.swift in Sources */,
+				17A201BC22344AEC0042D333 /* FormaDePagamentosCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +767,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9EJXT35WE;
+				DEVELOPMENT_TEAM = BKK27272P7;
 				INFOPLIST_FILE = TreinoFacil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -679,7 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F9EJXT35WE;
+				DEVELOPMENT_TEAM = BKK27272P7;
 				INFOPLIST_FILE = TreinoFacil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

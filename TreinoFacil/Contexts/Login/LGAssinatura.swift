@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LGAssinatura: UIViewController {
+class LGAssinaturaVC: BaseViewController {
 
     @IBOutlet weak var tf_celular: UITextField!
     @IBOutlet weak var switch_termos: UISwitch!
@@ -53,8 +53,13 @@ class LGAssinatura: UIViewController {
         
         let obj = RegistroCelular(numero: numero!, token: "")
         self.registroCelular = obj
-        
-        GlobalCalls.celular(body: obj.toJSON()).done { result -> Void in
+            
+        GlobalCalls.celular(networkRequestDelegate: self, body: obj.toJSON(), responseHandler: ResponseHandler(startHandler: {
+            self.btn_send.loadingIndicator(true)
+        }, finishHandler: {
+            self.btn_send.loadingIndicator(false)
+        }, successHandler: { (result) in
+            
             print(result)
             if result["id"].intValue == 102 {
                 self.performSegue(withIdentifier: "toCodeSms", sender: nil)
@@ -62,8 +67,9 @@ class LGAssinatura: UIViewController {
                 Utils.openAlert(message: result["message"].stringValue)
             }
             
-        }.catch { error in print(error) }
-        
+        }, failureHandler: { (error) in
+            
+        }))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
