@@ -7,10 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     var withoutSpecialCharacters: String {
         return self.components(separatedBy: CharacterSet.punctuationCharacters).joined(separator: "")
+    }
+    
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
     }
     
     var removingWhitespaces: String {
@@ -92,3 +106,27 @@ extension StringProtocol {
 }
 
 
+extension CALayer {
+    
+    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+        
+        let border = CALayer()
+        
+        switch edge {
+        case .top:
+            border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
+        case .bottom:
+            border.frame = CGRect(x: 0, y: frame.height - thickness, width: frame.width, height: thickness)
+        case .left:
+            border.frame = CGRect(x: 0, y: 0, width: thickness, height: frame.height)
+        case .right:
+            border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: frame.height)
+        default:
+            break
+        }
+        
+        border.backgroundColor = color.cgColor;
+        
+        addSublayer(border)
+    }
+}

@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR4-yl-8hw">
-                                <rect key="frame" x="32" y="296.66666666666669" width="350" height="40"/>
+                                <rect key="frame" x="32" y="256.66666666666669" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="waN-yi-ajX"/>
                                 </constraints>
@@ -120,6 +120,15 @@
                                     <action selector="logout:" destination="LU6-0b-ZHh" eventType="touchUpInside" id="66c-gb-aEm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBk-u8-5GY">
+                                <rect key="frame" x="32" y="316.66666666666669" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xJA-24-y1l"/>
+                                </constraints>
+                                <state key="normal" title="Validar Agendamento">
+                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -128,12 +137,15 @@
                             <constraint firstItem="OcJ-So-8yN" firstAttribute="top" secondItem="gf7-VU-v6O" secondAttribute="top" constant="32" id="63P-Ld-TAB"/>
                             <constraint firstItem="fRA-xn-Q0H" firstAttribute="top" secondItem="OcJ-So-8yN" secondAttribute="bottom" constant="60" id="BCn-KX-y7A"/>
                             <constraint firstItem="gf7-VU-v6O" firstAttribute="bottom" secondItem="QWN-Og-ddD" secondAttribute="bottom" id="BdK-28-zvF"/>
-                            <constraint firstItem="PR4-yl-8hw" firstAttribute="top" secondItem="fRA-xn-Q0H" secondAttribute="bottom" constant="60" id="D82-tv-Me9"/>
+                            <constraint firstItem="PR4-yl-8hw" firstAttribute="top" secondItem="fRA-xn-Q0H" secondAttribute="bottom" constant="20" id="D82-tv-Me9"/>
+                            <constraint firstItem="fBk-u8-5GY" firstAttribute="leading" secondItem="gf7-VU-v6O" secondAttribute="leading" constant="32" id="FYE-OX-EoN"/>
                             <constraint firstItem="gf7-VU-v6O" firstAttribute="trailing" secondItem="PR4-yl-8hw" secondAttribute="trailing" constant="32" id="TWH-5g-VLO"/>
                             <constraint firstItem="gf7-VU-v6O" firstAttribute="trailing" secondItem="QWN-Og-ddD" secondAttribute="trailing" id="UDb-8I-DKn"/>
                             <constraint firstItem="gf7-VU-v6O" firstAttribute="trailing" secondItem="fRA-xn-Q0H" secondAttribute="trailing" constant="32" id="Wbx-fQ-f1v"/>
                             <constraint firstItem="QWN-Og-ddD" firstAttribute="leading" secondItem="gf7-VU-v6O" secondAttribute="leading" id="dmB-Zd-Ik9"/>
+                            <constraint firstItem="gf7-VU-v6O" firstAttribute="trailing" secondItem="fBk-u8-5GY" secondAttribute="trailing" constant="32" id="gOm-hJ-N7o"/>
                             <constraint firstItem="gf7-VU-v6O" firstAttribute="trailing" secondItem="OcJ-So-8yN" secondAttribute="trailing" constant="32" id="hYE-YJ-837"/>
+                            <constraint firstItem="fBk-u8-5GY" firstAttribute="top" secondItem="PR4-yl-8hw" secondAttribute="bottom" constant="20" id="kt0-6A-ELr"/>
                             <constraint firstItem="OcJ-So-8yN" firstAttribute="leading" secondItem="gf7-VU-v6O" secondAttribute="leading" constant="32" id="rQ4-ng-twR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gf7-VU-v6O"/>
@@ -145,6 +157,7 @@
                         <outlet property="btn_cadastrar_academia" destination="fRA-xn-Q0H" id="UBE-MF-G0w"/>
                         <outlet property="btn_cadastrar_aula" destination="PR4-yl-8hw" id="UOW-Ou-L5c"/>
                         <outlet property="sair" destination="QWN-Og-ddD" id="0om-7V-bED"/>
+                        <segue destination="bw5-CN-wYW" kind="show" id="LMm-L5-2C0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vC-wt-hzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -301,6 +314,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQz-Mk-299" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5434" y="120"/>
+        </scene>
+        <!--Validar Agendamento-->
+        <scene sceneID="N6F-Yd-bsR">
+            <objects>
+                <viewController id="bw5-CN-wYW" customClass="ValidarAgendamentoVC" customModule="TreinoFacil" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7f-Dd-EhD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7h-Ys-ilx">
+                                <rect key="frame" x="32" y="136.33333333333334" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DhN-lY-YTn"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite o código do agendamento do cliente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jk-Rp-9NL">
+                                <rect key="frame" x="32" y="96" width="350" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-iG-Q6g">
+                                <rect key="frame" x="32" y="206.33333333333334" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HaL-mB-pgs"/>
+                                </constraints>
+                                <state key="normal" title="Validar">
+                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registrar:" destination="KOF-ng-8Dr" eventType="touchUpInside" id="KtP-gi-5sE"/>
+                                    <action selector="validar:" destination="bw5-CN-wYW" eventType="touchUpInside" id="FTI-Bi-ddL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wKf-JT-e0W" firstAttribute="trailing" secondItem="0Jk-Rp-9NL" secondAttribute="trailing" constant="32" id="7hW-BZ-HhW"/>
+                            <constraint firstItem="G7h-Ys-ilx" firstAttribute="leading" secondItem="wKf-JT-e0W" secondAttribute="leading" constant="32" id="8au-TI-Alg"/>
+                            <constraint firstItem="wKf-JT-e0W" firstAttribute="trailing" secondItem="G7h-Ys-ilx" secondAttribute="trailing" constant="32" id="Lbv-U2-KYv"/>
+                            <constraint firstItem="0Jk-Rp-9NL" firstAttribute="top" secondItem="wKf-JT-e0W" secondAttribute="top" constant="32" id="Rr7-LR-SUb"/>
+                            <constraint firstItem="G7h-Ys-ilx" firstAttribute="top" secondItem="0Jk-Rp-9NL" secondAttribute="bottom" constant="20" id="VfL-Mu-66r"/>
+                            <constraint firstItem="Qlf-iG-Q6g" firstAttribute="top" secondItem="G7h-Ys-ilx" secondAttribute="bottom" constant="30" id="fXa-99-292"/>
+                            <constraint firstItem="wKf-JT-e0W" firstAttribute="trailing" secondItem="Qlf-iG-Q6g" secondAttribute="trailing" constant="32" id="g1F-zF-Kz0"/>
+                            <constraint firstItem="0Jk-Rp-9NL" firstAttribute="leading" secondItem="wKf-JT-e0W" secondAttribute="leading" constant="32" id="smS-p9-eks"/>
+                            <constraint firstItem="Qlf-iG-Q6g" firstAttribute="leading" secondItem="wKf-JT-e0W" secondAttribute="leading" constant="32" id="u94-NO-NyE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wKf-JT-e0W"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Validar Agendamento" id="6rs-qY-yXH"/>
+                    <connections>
+                        <outlet property="btn_validar" destination="Qlf-iG-Q6g" id="4tt-CL-lzN"/>
+                        <outlet property="tf_codigo" destination="G7h-Ys-ilx" id="QwP-ww-k7a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1p-uh-FE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6264" y="120"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mUB-j3-Ohv">

@@ -87,6 +87,13 @@ class GlobalCalls{
         return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "sendPerguntas", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
+    static func validaAgendamento(networkRequestDelegate: NetworkRequestsDelegate, agendamentoId: String, responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_eventos +  "/agendamento/" + agendamentoId
+        let header = setHeader(with: true)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "sendPerguntas", queryParams: nil, body: nil, responseHandler: responseHandler)
+    }
+    
     static func getCards(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
         let url = base_eventos +  "/cartao/"
         let header = setHeader(with: true)

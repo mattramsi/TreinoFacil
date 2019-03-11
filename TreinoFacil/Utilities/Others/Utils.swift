@@ -315,6 +315,59 @@ class Utils {
         }))
     }
     
+    
+    //Mostra pop-ups de texto como termos, politica de privacidade e etc...
+    static func showTextAlert(viewController: UIViewController, title: String, description: String) {
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark )
+        let blurVisualEffectView = UIVisualEffectView(effect: blurEffect)
+        blurVisualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        let alert = Bundle.main.loadNibNamed("TextPatternView", owner: viewController, options: nil)?.last as! TextPatternView
+        
+        
+        alert.blurEffect = blurVisualEffectView
+        alert.lbl_title.text = title.htmlToString
+        alert.textView_description.text = description.htmlToString
+        
+        let windows = UIApplication.shared.windows
+        let lastWindow = windows.last
+        
+        blurVisualEffectView.frame = (lastWindow?.bounds)!
+        
+        var height: CGFloat!
+        var midY: CGFloat!
+        
+        
+        print("SCREEN", UIScreen.main.bounds.height, UIScreen.main.bounds.height/2, UIScreen.main.bounds.height*1.3, alert.textView_description.contentSize.height,  alert.frame.height)
+        
+        let alertHeight = (alert.textView_description.contentSize.height + alert.frame.height)
+        
+        if alertHeight < 500 {
+            midY = UIScreen.main.bounds.height/3
+        } else {
+            midY = UIScreen.main.bounds.height * 0.15
+        }
+        
+        if (alertHeight + midY) > UIScreen.main.bounds.height {
+            height = UIScreen.main.bounds.height - (UIScreen.main.bounds.height * 0.3)
+        } else{
+            height = alertHeight - 150
+        }
+        
+        alert.frame = CGRect(x: 20, y: midY, width: UIScreen.main.bounds.width - 40, height:  height)
+        alert.layer.addBorder(edge: .top, color: Colors.pink , thickness: 4.0)
+        alert.alpha = 0.0
+        
+        lastWindow?.addSubview(blurVisualEffectView)
+        lastWindow?.addSubview(alert)
+        
+        UIView.animate(withDuration: 0.5) { () -> Void in
+            alert.alpha = 1.0
+        }
+    }
+    
+    
     static func getAreaLogadaCorporativo(controller: UIViewController & NetworkRequestsDelegate) {
         
         GlobalCalls.getAreaLogada(networkRequestDelegate: controller, responseHandler: ResponseHandler(startHandler: {

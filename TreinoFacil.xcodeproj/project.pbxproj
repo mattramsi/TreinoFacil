@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1704D07822369DFA00A5C2DD /* ValidarAgendamentoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704D07722369DFA00A5C2DD /* ValidarAgendamentoVC.swift */; };
+		1704D07A2236A0C900A5C2DD /* TextPatternView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1704D0792236A0C900A5C2DD /* TextPatternView.xib */; };
+		1704D07C2236A0D400A5C2DD /* TextPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1704D07B2236A0D400A5C2DD /* TextPatternView.swift */; };
 		17142E9722347C0B00AFF4A0 /* CartaoCredito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17142E9622347C0A00AFF4A0 /* CartaoCredito.swift */; };
 		172EC673222C79FA00684639 /* GymAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172EC672222C79FA00684639 /* GymAnnotationView.xib */; };
 		172EC675222C7A6200684639 /* GymAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EC674222C7A6200684639 /* GymAnnotationView.swift */; };
@@ -81,6 +84,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1704D07722369DFA00A5C2DD /* ValidarAgendamentoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidarAgendamentoVC.swift; sourceTree = "<group>"; };
+		1704D0792236A0C900A5C2DD /* TextPatternView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextPatternView.xib; sourceTree = "<group>"; };
+		1704D07B2236A0D400A5C2DD /* TextPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPatternView.swift; sourceTree = "<group>"; };
 		17142E9622347C0A00AFF4A0 /* CartaoCredito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartaoCredito.swift; path = /Users/matheusramos/Documents/Projects/ProjetoIOS11/TreinoFacil/TreinoFacil/Utilities/Domains/CartaoCredito.swift; sourceTree = "<absolute>"; };
 		172EC672222C79FA00684639 /* GymAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GymAnnotationView.xib; sourceTree = "<group>"; };
 		172EC674222C7A6200684639 /* GymAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymAnnotationView.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 			children = (
 				172EC672222C79FA00684639 /* GymAnnotationView.xib */,
 				17A201B4223446750042D333 /* CartaoCreditoCell.xib */,
+				1704D0792236A0C900A5C2DD /* TextPatternView.xib */,
 				17A201B6223446E60042D333 /* AddCartaoCreditoCell.xib */,
 			);
 			path = Xib;
@@ -191,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				176605922234BBA7008EEF8B /* Corporativo.storyboard */,
+				1704D07722369DFA00A5C2DD /* ValidarAgendamentoVC.swift */,
 				1766059C2234D444008EEF8B /* CadastroAulaVC.swift */,
 				176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */,
 				176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */,
@@ -373,6 +381,7 @@
 		17942D1F21A4CE2700E6CA06 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1704D07B2236A0D400A5C2DD /* TextPatternView.swift */,
 				17942D2021A4CE3500E6CA06 /* Home.storyboard */,
 				17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */,
 				17942D4F21A4D7A600E6CA06 /* MapGym.swift */,
@@ -499,6 +508,7 @@
 			files = (
 				17942BC921A49FCA00E6CA06 /* LaunchScreen.storyboard in Resources */,
 				17942BC621A49FCA00E6CA06 /* Assets.xcassets in Resources */,
+				1704D07A2236A0C900A5C2DD /* TextPatternView.xib in Resources */,
 				17942D2121A4CE3500E6CA06 /* Home.storyboard in Resources */,
 				17942CAB21A4A09C00E6CA06 /* Modelos in Resources */,
 				176605932234BBA7008EEF8B /* Corporativo.storyboard in Resources */,
@@ -581,6 +591,7 @@
 				17C771B322342852001FCA96 /* BaseViewController.swift in Sources */,
 				17942CB221A4A09C00E6CA06 /* ImageExtension.swift in Sources */,
 				172EC679222CC9AF00684639 /* HorariosTC.swift in Sources */,
+				1704D07C2236A0D400A5C2DD /* TextPatternView.swift in Sources */,
 				17942D4C21A4D6C800E6CA06 /* MeusTreinosVC.swift in Sources */,
 				17942D4E21A4D72100E6CA06 /* ListGymsVC.swift in Sources */,
 				17942CB521A4A09C00E6CA06 /* StringExtension.swift in Sources */,
@@ -623,6 +634,7 @@
 				17942D3B21A4D3A200E6CA06 /* Academia.swift in Sources */,
 				17942D1A21A4AA6A00E6CA06 /* LGEsqueceuVC.swift in Sources */,
 				17A201B322342D480042D333 /* Errors.swift in Sources */,
+				1704D07822369DFA00A5C2DD /* ValidarAgendamentoVC.swift in Sources */,
 				17142E9722347C0B00AFF4A0 /* CartaoCredito.swift in Sources */,
 				176605952234C58C008EEF8B /* LGLoginCorporativoVC.swift in Sources */,
 				17A201BC22344AEC0042D333 /* FormaDePagamentosCells.swift in Sources */,

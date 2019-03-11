@@ -81,6 +81,14 @@ class MeusTreinosVC: BaseTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let index = indexPath.row
+        let agendamento = self.agendamentos[index]
+        Utils.showTextAlert(viewController: self, title: "CÓDIGO DE AGENDAMENTO", description: agendamento.id!)
+        
+    }
+    
     
     
 
