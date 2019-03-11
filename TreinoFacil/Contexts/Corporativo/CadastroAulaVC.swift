@@ -190,10 +190,11 @@ class CadastroAulaVC: BaseViewController, FormBase {
     var mask_money = MaskDinheiro()
     
     @IBOutlet weak var tf_tags: UITextField!
-    
     @IBOutlet weak var btn_send: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
 
         // Do any additional setup after loading the view.
         tf_nome_academia.addTarget(self, action: #selector(openSelectMyGyms), for: UIControlEvents.touchDown)
@@ -296,6 +297,7 @@ class CadastroAulaVC: BaseViewController, FormBase {
     func openSelect(array: [Any]) {
         
         if !array.isEmpty {
+            
             let storyboard = UIStoryboard(name: "Corporativo", bundle: nil)
             if let controller = storyboard.instantiateViewController(withIdentifier: "DefaultTC") as? DefaultTC {
                 controller.viewThatOpened = self
@@ -317,33 +319,54 @@ class CadastroAulaVC: BaseViewController, FormBase {
     
     func formatFormToSend() -> [String : Any] {
         
-        let valor = self.tf_valor.text
-        let tags = self.tf_tags.text!.components(separatedBy: ",")
-        let local = Local(id: self.academiaSelecionada.id!)
-        let configuracao = Configuracao(valor: Valor(quantidade: (valor?.moneyToApi())!, moeda: "BRL"), horarios: self.horariosSelecionados, diasSemana: self.diasDaSemanaSelecionados, duracaoMinutos: self.tf_duracao.text!)
-        let eventoToApi = EventoToApi(local: local, nome: self.tf_nome_aula.text!, descricao: self.tf_descricao.text!, tags: tags, configuracao: configuracao)
-        
-        let dict = eventoToApi.toJSON()
-        
-        print(dict)
-        return dict
+        if
+            (self.tf_valor.text?.isEmpty)! ||
+            (self.tf_nome_aula.text?.isEmpty)! ||
+            (self.tf_nome_academia.text?.isEmpty)! ||
+            (self.tf_dias_semana.text?.isEmpty)! ||
+            (self.tf_duracao.text?.isEmpty)! ||
+            (self.tf_horarios.text?.isEmpty)! ||
+            (self.tf_descricao.text?.isEmpty)! ||
+            (self.tf_tags.text?.isEmpty)!
+        {
+           
+            return [:]
+        } else {
+            
+            let tags = self.tf_tags.text!.components(separatedBy: ",")
+            let local = Local(id: self.academiaSelecionada.id!)
+            let configuracao = Configuracao(valor: Valor(quantidade: Double(self.tf_valor.text!.moneyToApi()), moeda: "BRL"), horarios: self.horariosSelecionados, diasSemana: self.diasDaSemanaSelecionados, duracaoMinutos: self.tf_duracao.text!)
+            let eventoToApi = EventoToApi(local: local, nome: self.tf_nome_aula.text!, descricao: self.tf_descricao.text!, tags: tags, configuracao: configuracao)
+            
+            let dict = eventoToApi.toJSON()
+            
+            print(dict)
+            return dict
+        }
+      
     }
     
     @IBAction func registrar(_ sender: Any) {
         
         let obj = formatFormToSend()
-        GlobalCalls.evento(networkRequestDelegate: self, body: obj, responseHandler: ResponseHandler(startHandler: {
-            
-        }, finishHandler: {
-            
-        }, successHandler: { (result) in
-            
-            self.navigationController?.popViewController(animated: true)
-            
-        }, failureHandler: { (error) in
-            
-        }))
         
+        if !obj.isEmpty {
+            GlobalCalls.evento(networkRequestDelegate: self, body: obj, responseHandler: ResponseHandler(startHandler: {
+                self.btn_send.loadingIndicator(true, color: .black)
+            }, finishHandler: {
+                self.btn_send.loadingIndicator(true, color: .black)
+            }, successHandler: { (result) in
+                
+                self.navigationController?.popViewController(animated: true)
+                
+            }, failureHandler: { (error) in
+                
+            }))
+            
+        } else {
+             Utils.openAlert(message: "Dados incompletos!")
+        }
+       
     }
 
 }

@@ -73,6 +73,7 @@ class LGLoginVC: BaseViewController, FormBase {
                 
                
                 Utils.setStorage(name: "clienteId", value: result["result"].stringValue)
+                Utils.setStorage(name: "isClient", value: "true")
                 print("TOKEN: ", Utils.getStorage(name: "clienteId"))
                 
                 if Utils.getClienteId.isEmpty {
@@ -133,5 +134,9 @@ class LGLoginVC: BaseViewController, FormBase {
         }, failureHandler: { (error) in
             
         }))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         Utils.setStorage(name: "isClient", value: "true")
     }
 }

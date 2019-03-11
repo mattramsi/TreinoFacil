@@ -200,15 +200,18 @@ class Utils {
     }
     
     static func openAlert(message: String) {
-        let message = message
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        UIApplication.topViewController()?.present(alert, animated: true)
         
-        let duration: Double = 1
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
-            alert.dismiss(animated: true)
-        }
+        DispatchQueue.main.async(execute: {
+            let message = message
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            UIApplication.topViewController()?.present(alert, animated: true)
+            
+            let duration: Double = 2
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
+                alert.dismiss(animated: true)
+            }
+        })
     }
     
     //
@@ -255,6 +258,13 @@ class Utils {
         else { return clienteId!}
     }
     
+    static var isClient: String {
+        
+        let isClient = UserDefaults.standard.string(forKey: "isClient")
+        if isClient == nil {return ""}
+        else { return isClient!}
+    }
+    
     static func deleteStorage(name: String) {
         return UserDefaults.standard.removeObject(forKey: name)
     }
@@ -281,16 +291,21 @@ class Utils {
             case 2:
                 //perguntas
                 DispatchQueue.main.async(){
-                    controller.performSegue(withIdentifier: "toHome", sender: nil)
+                    controller.performSegue(withIdentifier: "toAvaliation", sender: nil)
                 }
                 
                 break
             case 101:
+                let storyboard = UIStoryboard(name: "Home", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
                 DispatchQueue.main.async(){
-                    controller.performSegue(withIdentifier: "toHome", sender: nil)
+                    controller.present(viewController!, animated: true, completion: nil)
                 }
                 break
             default:
+                DispatchQueue.main.async(){
+                    controller.performSegue(withIdentifier: "toBemVindo", sender: nil)
+                }
                 break
             }
             
@@ -299,5 +314,51 @@ class Utils {
             
         }))
     }
-
+    
+    static func getAreaLogadaCorporativo(controller: UIViewController & NetworkRequestsDelegate) {
+        
+        GlobalCalls.getAreaLogada(networkRequestDelegate: controller, responseHandler: ResponseHandler(startHandler: {
+            
+        }, finishHandler: {
+            
+        }, successHandler: { (result) in
+            
+            let id = result["id"].intValue
+            print(id)
+            switch id {
+                
+            case 1:
+                //celular
+                DispatchQueue.main.async(){
+                    controller.performSegue(withIdentifier: "toAssinatura", sender: nil)
+                }
+                break
+            case 2:
+                //perguntas
+                let storyboard = UIStoryboard(name: "Corporativo", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
+                DispatchQueue.main.async(){
+                    controller.present(viewController!, animated: true, completion: nil)
+                }
+                
+                break
+            case 101:
+                let storyboard = UIStoryboard(name: "Corporativo", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
+                DispatchQueue.main.async(){
+                    controller.present(viewController!, animated: true, completion: nil)
+                }
+                break
+            default:
+                DispatchQueue.main.async(){
+                    controller.performSegue(withIdentifier: "toBemVindo", sender: nil)
+                }
+                break
+            }
+            
+            
+        }, failureHandler: { (error) in
+            
+        }))
+    }
 }

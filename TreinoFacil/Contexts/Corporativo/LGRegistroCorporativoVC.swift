@@ -92,16 +92,17 @@ class LGRegistroCorporativoVC: BaseViewController, FormBase {
         }, successHandler: { (result) in
             
             if result["status"].stringValue == "200" {
-                self.performSegue(withIdentifier: "toAvaliation", sender: nil)
+                self.performSegue(withIdentifier: "toAssinatura", sender: nil)
                 Utils.openAlert(message: "Registro com sucesso!")
                 Utils.setStorage(name: "clienteId", value: result["result"].stringValue)
+                Utils.setStorage(name: "isClient", value: "false")
                 
             } else if result["id"].intValue ==  100 {
                 Utils.openAlert(message: result["message"].stringValue)
             }
             
         }, failureHandler: { (error) in
-            
+            Utils.openAlert(message: "Não foi poss;ível fazer o registro!")
         }))
         
         

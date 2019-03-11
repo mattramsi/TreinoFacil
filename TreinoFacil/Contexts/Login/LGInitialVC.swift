@@ -15,7 +15,7 @@ class LGInitialVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        Utils.getAreaLogada(controller: self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,9 +27,15 @@ class LGInitialVC: BaseViewController {
                 self.performSegue(withIdentifier: "toBemVindo", sender: nil)
             }
             
-            print("Não tem clienteID", Utils.getStorage(name: "clienteId"))
+            print("Não tem clienteID", Utils.getStorage(name: "clienteId"), Utils.getStorage(name: "isClient"))
         } else {
-            print("tem clienteID", Utils.getStorage(name: "clienteId"))
+            if Utils.isClient == "true" {
+                 Utils.getAreaLogada(controller: self)
+            } else{
+                 Utils.getAreaLogadaCorporativo(controller: self)
+            }
+            
+            print("tem clienteID", Utils.getStorage(name: "clienteId"), Utils.getStorage(name: "isClient"))
         }
     }
     

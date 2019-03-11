@@ -22,6 +22,8 @@ class HorariosTC: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(self.academia.configuracao?.valor)
 
     }
     

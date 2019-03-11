@@ -16,11 +16,28 @@ class LGSucessoVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if Utils.isClient == "true" {
+           self.btn_sair.setTitle("Treinar", for: .normal)
+        } else{
+            self.btn_sair.setTitle("Continuar", for: .normal)
+        }
     }
+    
+    @IBAction func goToHome(_ sender: Any) {
+        
+        print(Utils.isClient)
+        if Utils.isClient == "true" {
+            Utils.getAreaLogada(controller: self)
+        } else{
+            Utils.getAreaLogadaCorporativo(controller: self)
+        }
+        
+    }
+    
 
 }
 
-class LGSucessoEsqueceuVC: UIViewController {
+class LGSucessoEsqueceuVC: BaseViewController {
     
     @IBOutlet weak var btn_sair: UIButton!
     
@@ -37,5 +54,16 @@ class LGSucessoEsqueceuVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    
+    @IBAction func gotoLogin(_ sender: Any) {
+        
+        if Utils.isClient == "true" {
+            Utils.getAreaLogada(controller: self)
+        } else{
+            Utils.getAreaLogadaCorporativo(controller: self)
+        }
+        
     }
 }

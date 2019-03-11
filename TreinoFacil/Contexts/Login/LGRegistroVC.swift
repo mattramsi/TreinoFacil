@@ -97,6 +97,7 @@ class LGRegistroVC: BaseViewController, FormBase {
                 self.performSegue(withIdentifier: "toAvaliation", sender: nil)
                 Utils.openAlert(message: "Registro com sucesso!")
                 Utils.setStorage(name: "clienteId", value: result["result"].stringValue)
+                Utils.setStorage(name: "isClient", value: "true")
                 
             } else if result["id"].intValue ==  100 {
                 Utils.openAlert(message: result["message"].stringValue)

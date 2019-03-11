@@ -61,7 +61,7 @@ class GlobalCalls{
     
     static func agendamento(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
         let url = base_eventos +  "/agendamento/"
-        let header = setHeader(with: false)
+        let header = setHeader(with: true)
         
         return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "agendamento", queryParams: nil, body: body, responseHandler: responseHandler)
     }
@@ -78,6 +78,13 @@ class GlobalCalls{
         let header = setHeader(with: true)
         
         return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "saveCartao", queryParams: nil, body: body, responseHandler: responseHandler)
+    }
+    
+    static func sendPerguntas(networkRequestDelegate: NetworkRequestsDelegate, body: [String:Any], responseHandler: ResponseHandler)  -> DataRequest {
+        let url = base_aquisicao +  "/perguntas"
+        let header = setHeader(with: true)
+        
+        return Service.post(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "sendPerguntas", queryParams: nil, body: body, responseHandler: responseHandler)
     }
     
     static func getCards(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
@@ -110,7 +117,7 @@ class GlobalCalls{
     
     static func getLocal(networkRequestDelegate: NetworkRequestsDelegate, responseHandler: ResponseHandler)  -> DataRequest {
         let url = base_eventos + "/local/"
-        let header = setHeader(with: false)
+        let header = setHeader(with: true)
         
         return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getLocal", queryParams: nil, responseHandler: responseHandler)
     }
@@ -121,9 +128,6 @@ class GlobalCalls{
         
         return Service.get(networkRequestDelegate: networkRequestDelegate, header: header, url: url, nomeMetodo: "getAreaLogada", queryParams: nil, responseHandler: responseHandler)
     }
-    
-    
-    
     
 }
 

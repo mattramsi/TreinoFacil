@@ -16,7 +16,7 @@
 		176605932234BBA7008EEF8B /* Corporativo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176605922234BBA7008EEF8B /* Corporativo.storyboard */; };
 		176605952234C58C008EEF8B /* LGLoginCorporativoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */; };
 		176605972234C654008EEF8B /* LGRegistroCorporativoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */; };
-		176605992234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605982234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift */; };
+		176605992234C7A0008EEF8B /* MinhasAcademiasTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605982234C7A0008EEF8B /* MinhasAcademiasTC.swift */; };
 		1766059B2234D1F3008EEF8B /* CadastroAcademiaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766059A2234D1F3008EEF8B /* CadastroAcademiaVC.swift */; };
 		1766059D2234D444008EEF8B /* CadastroAulaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766059C2234D444008EEF8B /* CadastroAulaVC.swift */; };
 		176605A52234D554008EEF8B /* LocalToApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176605A12234D554008EEF8B /* LocalToApi.swift */; };
@@ -65,6 +65,7 @@
 		17942D4E21A4D72100E6CA06 /* ListGymsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D4D21A4D72100E6CA06 /* ListGymsVC.swift */; };
 		17942D5021A4D7A600E6CA06 /* MapGym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D4F21A4D7A600E6CA06 /* MapGym.swift */; };
 		17942D5221A4D7FA00E6CA06 /* PesquisaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */; };
+		179DFBA72235E21D0005020B /* MinhaAcademiaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DFBA62235E21D0005020B /* MinhaAcademiaVC.swift */; };
 		17A201B222342D480042D333 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201B022342D480042D333 /* ApiError.swift */; };
 		17A201B322342D480042D333 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A201B122342D480042D333 /* Errors.swift */; };
 		17A201B5223446750042D333 /* CartaoCreditoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A201B4223446750042D333 /* CartaoCreditoCell.xib */; };
@@ -88,7 +89,7 @@
 		176605922234BBA7008EEF8B /* Corporativo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Corporativo.storyboard; sourceTree = "<group>"; };
 		176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGLoginCorporativoVC.swift; sourceTree = "<group>"; };
 		176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGRegistroCorporativoVC.swift; sourceTree = "<group>"; };
-		176605982234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhasAcademiasTCTableViewController.swift; sourceTree = "<group>"; };
+		176605982234C7A0008EEF8B /* MinhasAcademiasTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhasAcademiasTC.swift; sourceTree = "<group>"; };
 		1766059A2234D1F3008EEF8B /* CadastroAcademiaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroAcademiaVC.swift; sourceTree = "<group>"; };
 		1766059C2234D444008EEF8B /* CadastroAulaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroAulaVC.swift; sourceTree = "<group>"; };
 		176605A12234D554008EEF8B /* LocalToApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalToApi.swift; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		17942D4D21A4D72100E6CA06 /* ListGymsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGymsVC.swift; sourceTree = "<group>"; };
 		17942D4F21A4D7A600E6CA06 /* MapGym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGym.swift; sourceTree = "<group>"; };
 		17942D5121A4D7FA00E6CA06 /* PesquisaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaVC.swift; sourceTree = "<group>"; };
+		179DFBA62235E21D0005020B /* MinhaAcademiaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaAcademiaVC.swift; sourceTree = "<group>"; };
 		17A201B022342D480042D333 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		17A201B122342D480042D333 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		17A201B4223446750042D333 /* CartaoCreditoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartaoCreditoCell.xib; sourceTree = "<group>"; };
@@ -192,8 +194,9 @@
 				1766059C2234D444008EEF8B /* CadastroAulaVC.swift */,
 				176605942234C58C008EEF8B /* LGLoginCorporativoVC.swift */,
 				176605962234C654008EEF8B /* LGRegistroCorporativoVC.swift */,
-				176605982234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift */,
+				176605982234C7A0008EEF8B /* MinhasAcademiasTC.swift */,
 				1766059A2234D1F3008EEF8B /* CadastroAcademiaVC.swift */,
+				179DFBA62235E21D0005020B /* MinhaAcademiaVC.swift */,
 			);
 			path = Corporativo;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				17942CB821A4A09C00E6CA06 /* Colors.swift in Sources */,
 				17942CAC21A4A09C00E6CA06 /* GifAux.swift in Sources */,
 				176605902234B021008EEF8B /* MeusCartoesTC.swift in Sources */,
+				179DFBA72235E21D0005020B /* MinhaAcademiaVC.swift in Sources */,
 				17942CC321A4A09C00E6CA06 /* Validatable.swift in Sources */,
 				17942D5221A4D7FA00E6CA06 /* PesquisaVC.swift in Sources */,
 				17A201B222342D480042D333 /* ApiError.swift in Sources */,
@@ -603,7 +607,7 @@
 				17942CB021A4A09C00E6CA06 /* ScrollViewExtension.swift in Sources */,
 				17942D3A21A4D3A200E6CA06 /* Configuracao.swift in Sources */,
 				17942CB421A4A09C00E6CA06 /* ColorExtension.swift in Sources */,
-				176605992234C7A0008EEF8B /* MinhasAcademiasTCTableViewController.swift in Sources */,
+				176605992234C7A0008EEF8B /* MinhasAcademiasTC.swift in Sources */,
 				17942CB321A4A09C00E6CA06 /* ButtonExtension.swift in Sources */,
 				17942CAD21A4A09C00E6CA06 /* Utils.swift in Sources */,
 				17942D1821A4A94900E6CA06 /* LGSucessoVC.swift in Sources */,

@@ -22,7 +22,7 @@ class MinhasAcademiasTC: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboard()
   
     }
 

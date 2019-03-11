@@ -134,7 +134,7 @@ class PesquisaVC: BaseViewController, UISearchBarDelegate {
             }))
             
         } else {
-            locManager.requestLocation()
+            locManager.requestWhenInUseAuthorization()
             self.getCurrentLocation()
         }
 
