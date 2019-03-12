@@ -93,9 +93,12 @@ class OutrosTC: BaseTableViewController {
         case "Sair":
             
             Utils.resetDefaults()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let controller = storyboard.instantiateViewController(withIdentifier: "LGInitialVC") as? LGInitialVC {
-                self.present(controller, animated: true, completion: nil)
+
+            DispatchQueue.main.async(){
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if let controller = storyboard.instantiateInitialViewController() {
+                   self.present(controller, animated: true, completion: nil)
+                }
             }
             break
         default:

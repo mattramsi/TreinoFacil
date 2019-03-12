@@ -177,26 +177,20 @@
                                         <color key="textColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmartFit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-Kf-get">
-                                        <rect key="frame" x="0.0" y="250" width="311" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="vz2-55-juf"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmartFit" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-Kf-get">
+                                        <rect key="frame" x="0.0" y="250" width="311" height="19.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhA-tn-0Rz">
-                                        <rect key="frame" x="0.0" y="290" width="311" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="uBy-PJ-5hV"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="289.5" width="311" height="19.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 50,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="py6-8c-qIm">
-                                        <rect key="frame" x="0.0" y="359" width="311" height="41"/>
+                                        <rect key="frame" x="0.0" y="358" width="311" height="41"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <color key="textColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -277,6 +271,7 @@
                         <outlet property="endereco" destination="yhA-tn-0Rz" id="hSW-Ac-xVc"/>
                         <outlet property="image" destination="LKJ-6J-Bnu" id="pL9-8M-5Cn"/>
                         <outlet property="lbl_horario" destination="6o7-Xj-5JQ" id="zqp-yC-Vu9"/>
+                        <outlet property="lbl_nome_aula" destination="Trg-Xt-B8h" id="9b3-yd-f6R"/>
                         <outlet property="name" destination="veb-Kf-get" id="g3L-bf-IlN"/>
                         <outlet property="valor" destination="py6-8c-qIm" id="xmN-ik-NDW"/>
                     </connections>

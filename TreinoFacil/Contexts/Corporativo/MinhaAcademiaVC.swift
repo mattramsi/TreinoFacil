@@ -26,9 +26,11 @@ class MinhaAcademiaVC: UIViewController {
 
     @IBAction func logout(_ sender: Any) {
         Utils.resetDefaults()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "LGInitialVC") as? LGInitialVC {
-            self.present(controller, animated: true, completion: nil)
+        DispatchQueue.main.async(){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let controller = storyboard.instantiateViewController(withIdentifier: "BemVindoVC") as? BemVindoVC {
+                self.present(controller, animated: true, completion: nil)
+            }
         }
     
     }

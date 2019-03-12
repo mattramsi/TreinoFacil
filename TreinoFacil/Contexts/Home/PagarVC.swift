@@ -17,6 +17,7 @@ class PagarVC: BaseViewController {
     @IBOutlet weak var valor: UILabel!
     @IBOutlet weak var lbl_horario: UILabel!
     
+    @IBOutlet weak var lbl_nome_aula: UILabel!
     var academia: Academia!
     var horario: String!
     
@@ -24,7 +25,7 @@ class PagarVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.lbl_nome_aula.text = self.academia.nome
         self.image.downloaded(from: (academia.local?.photoUrl)!)
         self.name.text = academia.local?.nome
         self.endereco.text = academia.local?.enderecoCompleto

@@ -25,7 +25,7 @@ class MeusTreinosVC: BaseTableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-   
+        self.tableView.separatorStyle = .none
         
     }
     
@@ -85,7 +85,11 @@ class MeusTreinosVC: BaseTableViewController {
         
         let index = indexPath.row
         let agendamento = self.agendamentos[index]
-        Utils.showTextAlert(viewController: self, title: "CÓDIGO DE AGENDAMENTO", description: agendamento.id!)
+        
+        if !agendamento.utilizado! {
+             Utils.showTextAlert(viewController: self, title: "CÓDIGO DE AGENDAMENTO", description: agendamento.id!)
+        }
+       
         
     }
     

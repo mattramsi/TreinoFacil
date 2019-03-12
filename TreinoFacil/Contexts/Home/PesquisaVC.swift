@@ -164,9 +164,7 @@ class PesquisaVC: BaseViewController, UISearchBarDelegate {
         
         filtered = self.academias.filter({ $0.nome?.lowercased().range(of: searchText.lowercased(), options: .caseInsensitive) != nil || $0.local?.nome!.lowercased().range(of: searchText.lowercased(), options: .caseInsensitive) != nil || ($0.tags?.contains(searchText.lowercased()))!})
         
-        print(filtered.count)
-        self.mapVC.setListGym(array: filtered)
-        self.listVC.setListGym(array: filtered)
+        
         
         if(filtered.count == 0){
             searchActive = false;
@@ -174,6 +172,9 @@ class PesquisaVC: BaseViewController, UISearchBarDelegate {
             self.listVC.setListGym(array: academias)
         } else {
             searchActive = true;
+            print(filtered.count)
+            self.mapVC.setListGym(array: filtered)
+            self.listVC.setListGym(array: filtered)
         }
     }
     

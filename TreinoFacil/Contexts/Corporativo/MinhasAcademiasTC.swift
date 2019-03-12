@@ -14,6 +14,10 @@ class MinhasAcademiasCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var address: UILabel!
     
+    override func awakeFromNib() {
+    
+    }
+    
 }
 
 class MinhasAcademiasTC: BaseTableViewController {
@@ -23,7 +27,7 @@ class MinhasAcademiasTC: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
-  
+        self.tableView.separatorStyle = .none
     }
 
     

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Minhas Academias-->
+        <!--Meus Locais-->
         <scene sceneID="lta-0a-crj">
             <objects>
                 <tableViewController storyboardIdentifier="MinhasAcademiasTC" id="1a9-L4-I9c" customClass="MinhasAcademiasTC" customModule="TreinoFacil" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                             <outlet property="delegate" destination="1a9-L4-I9c" id="eVn-j3-obJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Minhas Academias" id="kjw-sJ-Xvq"/>
+                    <navigationItem key="navigationItem" title="Meus Locais" id="kjw-sJ-Xvq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emb-XP-muU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,11 +85,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR4-yl-8hw">
                                 <rect key="frame" x="32" y="256.66666666666669" width="350" height="40"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="waN-yi-ajX"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Cadastrar Aula">
-                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="KeA-mL-vnk" kind="show" id="yuf-uj-xKv"/>
@@ -97,11 +99,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRA-xn-Q0H">
                                 <rect key="frame" x="32" y="196.66666666666666" width="350" height="40"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Jhg-5I-t9i"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Registar Local da Academia">
-                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="KOF-ng-8Dr" kind="show" id="ki4-6s-geM"/>
@@ -122,12 +126,17 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBk-u8-5GY">
                                 <rect key="frame" x="32" y="316.66666666666669" width="350" height="40"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xJA-24-y1l"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Validar Agendamento">
-                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bw5-CN-wYW" kind="show" id="i3b-8e-KAv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,7 +166,6 @@
                         <outlet property="btn_cadastrar_academia" destination="fRA-xn-Q0H" id="UBE-MF-G0w"/>
                         <outlet property="btn_cadastrar_aula" destination="PR4-yl-8hw" id="UOW-Ou-L5c"/>
                         <outlet property="sair" destination="QWN-Og-ddD" id="0om-7V-bED"/>
-                        <segue destination="bw5-CN-wYW" kind="show" id="LMm-L5-2C0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vC-wt-hzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,11 +191,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pME-9G-vKR">
                                         <rect key="frame" x="20" y="461" width="350" height="40"/>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zVt-p8-l7O"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Registrar">
-                                            <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="registrar:" destination="KOF-ng-8Dr" eventType="touchUpInside" id="YMH-Dh-ROM"/>
@@ -340,14 +350,15 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlf-iG-Q6g">
                                 <rect key="frame" x="32" y="206.33333333333334" width="350" height="40"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HaL-mB-pgs"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Validar">
-                                    <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="registrar:" destination="KOF-ng-8Dr" eventType="touchUpInside" id="KtP-gi-5sE"/>
                                     <action selector="validar:" destination="bw5-CN-wYW" eventType="touchUpInside" id="FTI-Bi-ddL"/>
                                 </connections>
                             </button>
@@ -394,11 +405,11 @@
             </objects>
             <point key="canvasLocation" x="2591" y="637"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="W5Q-ln-9gw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RQb-LQ-ycS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" image="dumbbell" selectedImage="dumbbell" id="D0l-w6-nPy"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="dumbbell" selectedImage="dumbbell" id="D0l-w6-nPy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oSo-eS-WLe">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -418,11 +429,11 @@
             </objects>
             <point key="canvasLocation" x="3412" y="635.53223388305855"/>
         </scene>
-        <!--Minhas Academias-->
+        <!--Meus Locais-->
         <scene sceneID="OcZ-6E-Dqd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kP1-Ze-VXc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Minhas Academias" image="maps-and-flags" id="HTY-yb-4LG">
+                    <tabBarItem key="tabBarItem" title="Meus Locais" image="maps-and-flags" id="HTY-yb-4LG">
                         <color key="badgeColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -507,7 +518,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da Aula" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-Vp-k8Y">
                                         <rect key="frame" x="20" y="141" width="350" height="40"/>
@@ -519,22 +530,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duração" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw9-Jl-phv">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duração em minutos " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw9-Jl-phv">
                                         <rect key="frame" x="20" y="381" width="350" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="F1K-J6-rSO"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slG-xa-1na">
                                         <rect key="frame" x="20" y="632" width="350" height="40"/>
+                                        <color key="backgroundColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="iBB-vi-0x7"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Registrar">
-                                            <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="registrar:" destination="KeA-mL-vnk" eventType="touchUpInside" id="88N-Tq-gku"/>
@@ -645,8 +658,8 @@
                                         <constraint firstAttribute="width" constant="50" id="80h-hV-3Ic"/>
                                         <constraint firstAttribute="height" constant="50" id="E4q-1B-avp"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <state key="normal" title="Ok">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <state key="normal" title="OK">
                                         <color key="titleColor" red="0.8862745098" green="0.16078431369999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>

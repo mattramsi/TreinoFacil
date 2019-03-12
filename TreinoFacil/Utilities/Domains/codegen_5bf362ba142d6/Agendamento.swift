@@ -22,6 +22,7 @@ struct Agendamento : Mappable {
 	var transacaoId : String?
 	var id : String?
 	var clienteId : String?
+    var utilizado : Bool?
 
 	init?(map: Map) {
 
@@ -36,6 +37,7 @@ struct Agendamento : Mappable {
 		transacaoId <- map["transacaoId"]
 		id <- map["id"]
 		clienteId <- map["clienteId"]
+        utilizado <- map["utilizado"]
 	}
 
 }

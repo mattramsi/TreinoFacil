@@ -11,6 +11,7 @@ import UIKit
 class LGSucessoVC: BaseViewController {
 
     @IBOutlet weak var btn_sair: UIButton!
+    @IBOutlet weak var tf_msg: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +19,10 @@ class LGSucessoVC: BaseViewController {
         // Do any additional setup after loading the view.
         if Utils.isClient == "true" {
            self.btn_sair.setTitle("Treinar", for: .normal)
+            self.tf_msg.text = "Seu cadastro foi concluído, agora só escolher a sua academia e partiu treinar!"
         } else{
             self.btn_sair.setTitle("Continuar", for: .normal)
+             self.tf_msg.text = "Seu cadastro foi concluído, agora entre e admonistre já suas academias e aulas"
         }
     }
     

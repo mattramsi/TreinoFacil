@@ -23,6 +23,18 @@ class MapGymVC: BaseViewController, MKMapViewDelegate, CLLocationManagerDelegate
         self.mapView.delegate = self
 
         self.setMark()
+        
+        if self.locationManager != nil {
+            if let userLocation = self.locationManager.location?.coordinate {
+                
+                let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 1000, 1000)
+                mapView.setRegion(viewRegion, animated: false)
+            }
+            
+            DispatchQueue.main.async {
+                self.locationManager.startUpdatingLocation()
+            }
+        }
     }
   
     func setListGym(array: [Academia]){
@@ -89,19 +101,7 @@ class MapGymVC: BaseViewController, MKMapViewDelegate, CLLocationManagerDelegate
             mapView.addAnnotation(pin)
         }
 
-        if self.locationManager != nil {
-            if let userLocation = self.locationManager.location?.coordinate {
-
-                let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees(exactly: -23.5954644)!, longitude: CLLocationDegrees(exactly: -46.6917095)!)
-
-                let viewRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000)
-                mapView.setRegion(viewRegion, animated: false)
-            }
-
-            DispatchQueue.main.async {
-                self.locationManager.startUpdatingLocation()
-            }
-        }
+     
     }
     
     func removeMarks() {
